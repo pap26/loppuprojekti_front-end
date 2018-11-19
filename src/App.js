@@ -1,28 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import{ BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import KirjauduSivu from './components/KirjauduSivu.js';
+import Etusivu from './components/Etusivu.js';
+import Pelaajat from './components/Pelaajat.js';
+import Toimihenkilot from './components/Toimihenkilot.js';
+import Tapahtumat from './components/Tapahtumat.js';
+import Info from './components/Info';
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+
+
+ const App = appProps => (
+  <Router>
+  <div className="App">
+    <Switch>
+      <Route exact name="index" path="/" component={Etusivu} />
+      <Route path="/kirjaudu" component={KirjauduSivu} />
+      <Route path="/tapahtumat" component={Tapahtumat} />
+      <Route path="/info" component={Info} />
+      <Route path="/pelaajat" component={Pelaajat} />
+      <Route path="/toimihenkilot" component={Toimihenkilot} />
+    </Switch>
+  </div>
+  </Router>
+ )
 
 export default App;
