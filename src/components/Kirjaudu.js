@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import logo from '../img/kopse_logo.png'; 
 
 class Kirjaudu extends Component {
-        constructor(props) {
-        super(props);
-      }
+    //     constructor(props) {
+    //     super(props);
+    //   }
 
       handleClick=()=> {
         console.log('Click happened', this.props);
