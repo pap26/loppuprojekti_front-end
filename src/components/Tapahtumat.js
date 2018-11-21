@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Tapahtuma from './Tapahtuma.js';
 
-let duubiduu = [
+let tapahtumadata = [
     {id:1, 
     tapahtuma_tyyppi: "matsi", 
     tapahtuman_nimi: "Harjoituspeli KOPSE valkoinen - FC Viikingit", 
@@ -16,7 +16,7 @@ class Tapahtumat extends Component {
         return (
             <div>
                 <div>
-                <Tapahtuma lista={duubiduu}/>
+                <Tapahtuma lista={tapahtumadata}/>
                 </div>
             </div>
         );
