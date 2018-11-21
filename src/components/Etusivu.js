@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Navigation from './Navigation.js'
+import Tapahtumat from './Tapahtumat.js';
 
 class Etusivu extends Component {
 
@@ -8,7 +9,7 @@ class Etusivu extends Component {
         return (
             <div>
                 <Navigation />
-                <h1>KopseT04-05</h1>
+                <Tapahtumat />
 
 
             </div>
