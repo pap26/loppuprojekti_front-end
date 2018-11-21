@@ -8,8 +8,6 @@ class Pelaajat extends Component {
             <div>
                 <Navigation />
                 <h1>Pelaajat</h1>
-
-
             </div>
             
         );

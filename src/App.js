@@ -8,8 +8,6 @@ import Tapahtumat from './components/Tapahtumat.js';
 import Info from './components/Info';
 import './App.css';
 
-
-
  const App = appProps => (
   <Router>
   <div className="App">
