@@ -6,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("img/pallo.jpg")
 }
 
 code {
@@ -17,17 +18,21 @@ button {
  margin-top: 35px;
 }
 
-.tapahtuma_bg{
-  width: 409px;
-  background-clip: white;
+.tapahtuma_bg, .instagram{
+  width: 407px;
+  background-color: white;
   margin-left: auto;
   margin-right: auto;
   margin-top: 40px;
   border: solid 1px  black;
 }
 
+.instagram{
+  margin-top: 5px;
+}
+
 .tapahtuma_main {
-  width: 408px;
+  width: 405px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 5px;
@@ -112,3 +117,18 @@ button {
   height: 300px;
   margin-top: 10px;
 }
+
+.instagram{
+  width: 407px;
+  height: 300px;
+}
+
+.ig_img {
+  width: 100px;
+  height: auto;
+}
+
+.ig_img img {
+  width: 100%;
+}
+

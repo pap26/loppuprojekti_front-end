@@ -1,48 +1,57 @@
 import React, { Component } from 'react';
-import Tapahtuma from './Tapahtuma.js';
-
-let tapahtumadata = [
-    {id:1, 
-    summary: "matsi : Harjoituspeli KOPSE valkoinen - FC Viikingit", 
-    //tapahtuman_nimi: "Harjoituspeli KOPSE valkoinen - FC Viikingit", 
-    start: {
-        dateTime: {
-        value: 1542812400000,
-        dateOnly: false,
-        timeZoneShift: 120
-        },
-        timeZone: "Europe/Helsinki"
-        },
-    end: {
-        dateTime: {
-        value: 1542816000000,
-        dateOnly: false,
-        timeZoneShift: 120
-        },
-        timeZone: "Europe/Helsinki"
-        },
-
-    dateTime: {
-        value: 1542812400000,
-        timeZoneShift: 120
-    },
-    location: "Havukoski TN, Koivukylänväylä 32, 01360 Vantaa",
-    in: true
-    }];
 
 class Tapahtumat extends Component {
 
     render() {
+        var tapahtumalista = this.props.listakaikki.map((tapahtuma) =>{
+            return (
+             <div className="tapahtuma_main">
+                 <div className="tapahtuma_otsikko"> 
+                     <span className="tapahtuma_tyyppi">{tapahtuma.summary}</span>
+                </div>
+ 
+                <div className="tapahtuma_reg">
+                     <div className="tapahtuma_aika">
+                       <div className="pvm">
+                         {new Intl.DateTimeFormat('fi-FI', {  
+                         month: '2-digit', 
+                         day: '2-digit' 
+                         }).format(tapahtuma.start.dateTime.value)}</div>
+ 
+                       <span className="aika"> 
+                         {new Intl.DateTimeFormat('fi-FI', { 
+                         hour: 'numeric',
+                         minute: 'numeric',
+                         }).format(tapahtuma.start.dateTime.value)}-</span>
+ 
+                       <span className="aika">
+                         {new Intl.DateTimeFormat('fi-FI', { 
+                         hour: 'numeric',
+                         minute: 'numeric',
+                         }).format(tapahtuma.end.dateTime.value)}</span>
+                         <div>
+                             <button className="in_button">in</button>
+                             <button className="in_button">out</button>
+                         </div>
+                     </div>
+                     <div>
+                
+                         <div className="flex">
+                        
+                         </div>
+                     </div>
+                </div>
+             </div>
+            ) 
+         })
+
         return (
             <div>
-                <div className="tapahtuma_bg">
-                <Tapahtuma lista={tapahtumadata}/>
-                </div>
-            </div>
-        );
+                <div>{tapahtumalista}</div>
+              
+            </div>) ;
     }
 }
-
 
 
 export default Tapahtumat;

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react'; 
+import {Map, InfoWindow, GoogleApiWrapper} from 'google-maps-react'; 
 
 class Kartta extends Component {
 
     render() {
         const style = {
-            width: '407px',
+            width: '405px',
             height: '300px'
           }
         return (
