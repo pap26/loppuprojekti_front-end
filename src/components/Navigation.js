@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
-import {Navbar, Nav, NavItem} from 'react-bootstrap';
+import {Navbar, Nav, NavItem, NavDropdown, MenuItem} from 'react-bootstrap';
+import { auth } from "../firebase/auth";
 
 class Navigation extends Component {
+    constructor(props) {
+        super(props);
+        this.logout = this.logout.bind(this);
+    }    
+
+    logout() {
+        auth.signOut();
+    }
 
     render() {
         return (
@@ -20,9 +29,9 @@ class Navigation extends Component {
                     <NavItem eventKey={3} href="/info">Info</NavItem>
                     <NavItem eventKey={4} href="/pelaajat">Pelaajat</NavItem>
                     <NavItem eventKey={5} href="/toimihenkilot">Toimihenkilöt</NavItem>
-                </Nav>
+                    </Nav>
                     <Nav pullRight>
-                        <NavItem eventKey={6} href="/kirjaudu">Kirjaudu sisään</NavItem> 
+                    <NavItem eventKey={6} button onClick={this.logout} href="/">Kirjaudu ulos</NavItem>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
@@ -31,3 +40,8 @@ class Navigation extends Component {
 }
 
 export default Navigation;
+
+// {this.props.user?
+//     <NavItem eventKey={6} href="/kirjaudu">Kirjaudu ulos</NavItem> :
+//     <NavItem eventKey={7} href="/kirjaudu">Kirjaudu sisään</NavItem>
+// }
