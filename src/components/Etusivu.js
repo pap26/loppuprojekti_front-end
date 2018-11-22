@@ -3,6 +3,7 @@ import Tapahtumat from "./Tapahtumat.js";
 import Kirjaudu from "./Kirjaudu.js";
 import { auth } from "../firebase/auth";
 
+
 class Etusivu extends Component {
   constructor(props) {
     super(props);
