@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import Tapahtumat from "./Tapahtumat.js";
 import Kirjaudu from "./Kirjaudu.js";
 import { auth } from "../firebase/auth";
-
+import Navigation from './Navigation.js'
+import TapahtumaSivu from './TapahtumaSivu.js';
 
 class Etusivu extends Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class Etusivu extends Component {
     };
     this.authListener = this.authListener.bind(this);   
   }
+
 
   componentDidMount() {
     this.authListener();

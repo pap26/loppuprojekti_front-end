@@ -4,6 +4,7 @@
   "proxy": "http://localhost:8080/",
   "private": true,
   "dependencies": {
+    "google-maps-react": "^2.0.2",
     "axios": "^0.18.0",
     "firebase": "^5.5.9",
     "react": "^16.6.3",
