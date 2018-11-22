@@ -14,7 +14,7 @@ code {
 }
 
 button {
-  margin-top: 20px;
+ margin-top: 35px;
 }
 
 .tapahtuma_bg{
@@ -58,12 +58,12 @@ button {
 
 .tapahtuma_paikka{
   margin-top: 10px;
-  width: 250px;
+  width: 230px;
   margin-bottom: 15px;
 }
 
 .tapahtuma_aika{
-  width: 150px;
+  width: 170px;
 }
 
 .pvm{
@@ -101,4 +101,14 @@ button {
 .flex{
   display: flex;
   justify-content: space-between;
+}
+
+.hide-true  {
+  display: none;
+}
+
+.google_map{
+  width: 300px;
+  height: 300px;
+  margin-top: 10px;
 }

@@ -1,11 +1,34 @@
 import React, { Component } from 'react';
 import weather from '../img/weather.png';
+import Kartta from './Kartta.js';
 
 class Tapahtuma extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {displayKartta: false};
+        // This line is important!
+        //this.displayKartta = this.displayKartta.bind(this);
+      }
 
+    /*displayKartta () {
+        this.setState({
+            //displayKartta: true
+            displayKartta: !this.state.displayKartta
+        })
+    } */
+
+    displayKartta = () => {
+        this.setState({
+        //displayKartta: true
+        displayKartta: !this.state.displayKartta
+        })
+    }
+
+    
 
     render() {
-        var tapahtumalista = this.props.lista.map(function(tapahtuma) {
+
+        var tapahtumalista = this.props.lista.map((tapahtuma) =>{
 
            return (
             <div className="tapahtuma_main">
@@ -41,21 +64,21 @@ class Tapahtuma extends Component {
                     <div>
                         <div className="tapahtuma_paikka">{tapahtuma.location}</div>
                         <div className="flex">
-                            <div className="kartta"> <p><a href="#">kartta</a></p></div>
+                            <div className="kartta">
+                            <button className="karttabutton " onClick={this.displayKartta}>Kartta</button>
+                            </div>
                             <div className="saainfo"><img src={weather} className="weather" alt="weather" /></div> 
                         </div>
-                        
                     </div>
-                    
                </div>
-              
             </div>
            ) 
         })
         console.log(tapahtumalista);
         return (
             <div>
-                {tapahtumalista}
+                <div>{tapahtumalista}</div>
+                <div>{this.state.displayKartta && <Kartta />}</div>
             </div>) ;
     }
 }

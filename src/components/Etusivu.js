@@ -4,6 +4,11 @@ import Tapahtumat from './Tapahtumat.js';
 
 class Etusivu extends Component {
 
+    
+
+
+
+
 
     render() {
         return (
