@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Tapahtuma from './Tapahtuma.js';
 import Instagram from './Instagram.js';
+import Navigation from './Navigation.js';
 
 let tapahtumadata = [
     {id:1, 
@@ -31,11 +32,12 @@ let tapahtumadata = [
     in: true
     }];
 
-class Tapahtumat extends Component {
+class TapahtumaSivu extends Component {
 
     render() {
         return (
             <div>
+                <Navigation />
                 <div className="tapahtuma_bg">
                 <Tapahtuma lista={tapahtumadata}/>
                 </div>
@@ -48,5 +50,4 @@ class Tapahtumat extends Component {
 }
 
 
-
-export default Tapahtumat;
+export default TapahtumaSivu;
