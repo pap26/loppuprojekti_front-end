@@ -8,10 +8,11 @@ class Kirjaudu extends Component {
     this.login = this.login.bind(this);
     // this.signup = this.signup.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.resetPassword = this.resetPassword.bind(this);
     this.state = {
       email: "",
       password: "",
-      error: null
+      error: false
     };
   }
 
@@ -25,17 +26,36 @@ class Kirjaudu extends Component {
     console.log("login", auth);
     auth
       .signInWithEmailAndPassword(this.state.email, this.state.password)
-      .then(u => {})
+      .then(this.onLoginSuccess.bind(this))
       .catch(error => {
-        this.setState({ error });
-        console.log("Ei onnistu, saatans");
-        // ALLA OLEVA EI TOIMI
-        // this.setState({hasError: true});
-        // if (this.state.hasError) {
-        //   return <h1>Caught an error.</h1>
-        // }
-      });
-    console.log("Onnistui");
+        // this.setState({ error: true });
+        let errorCode = error.code;
+        this.onLoginFailure.bind(this)("Jaa nyt ei männynnä ihan niinku Strömssöössä. Koetappa uuvelleen.");
+        }
+      );
+  }
+
+  onLoginFailure(errorMessage) {
+    this.setState({ error: errorMessage });
+  }
+
+  onLoginSuccess() {
+    this.setState({
+      email: "",
+      password: "",
+      error: "",
+    });
+  }
+
+  resetPassword(event) {
+    event.preventDefault();
+    console.log("resetPassword", auth);
+    auth.sendPasswordResetEmail(this.state.email).then(function() {
+      console.log('Sähköposti lähetetty')
+    }).catch(function(error) {
+      let errorCode = error.code;
+      console.log('Ei onnistu')
+    });
   }
 
   // // uusi käyttäjä kirjautuu, tämän voisi ottaa käyttöön mahdollisessa Admin-näkymässä. Alempana tämän käyttämä nappula.
@@ -53,11 +73,9 @@ class Kirjaudu extends Component {
   // }
 
   render() {
-    const error = this.state.error;
+    const { email, password, error } = this.state;
     return (
       <div>
-        <div>
-        </div>
         <img src={logo} className="App-logo" alt="logo" />
         <div className="col-md-3">
           <form>
@@ -100,11 +118,33 @@ class Kirjaudu extends Component {
             >
               Uusi käyttäjä
             </button> */}
+
+            <button
+              type="submit"
+              onClick={this.resetPassword}
+              className="btn btn-primary"
+            >
+              Vaihda salasana
+            </button>
           </form>
         </div>
+        <h2 style={styles.errorTextStyle}>{this.state.error}</h2>
       </div>
     );
   }
 }
+
+const styles = {
+  errorTextStyle: {
+    fontSize: 16,
+    alignSelf: "left",
+    color: "red"
+  },
+  messageTextStyle: {
+    fontSize: 16,
+    alignSelf: "left",
+    color: "red"
+  }
+};
 
 export default Kirjaudu;
