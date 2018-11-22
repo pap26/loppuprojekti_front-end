@@ -46,7 +46,6 @@ EI MUUTEN TOIMI
                 <hr/>
                 <p>Tähän tulee button link pelaajalistaan kun saadaan joskus toimivia linkkibuttoneita!!!!! Bootstrapin tyylit ei toimi wtf</p>
 
-
             </div>
         );
     }

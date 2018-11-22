@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Navbar, Nav, NavItem, NavDropdown, MenuItem} from 'react-bootstrap';
 
+
 class Navigation extends Component {
 
     render() {
@@ -22,7 +23,7 @@ class Navigation extends Component {
                     <NavItem eventKey={5} href="/toimihenkilot">Toimihenkilöt</NavItem>
                 </Nav>
                     <Nav pullRight>
-                        <NavItem eventKey={6} href="/kirjaudu">Kirjaudu ulos</NavItem>
+                        <NavItem eventKey={6} href="/kirjaudu">Kirjaudu sisään</NavItem> 
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

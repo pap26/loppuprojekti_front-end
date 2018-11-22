@@ -11,6 +11,7 @@ import UusiPelaaja from "./components/UusiPelaaja";
 import Pelaajalista from "./components/Pelaajalista";
 
 
+
 const App = appProps => (
     <Router>
         <div className="App">
