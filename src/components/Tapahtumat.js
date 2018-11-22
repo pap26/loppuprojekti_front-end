@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Tapahtuma from './Tapahtuma.js';
+import Navigation from './Navigation';
 
 let tapahtumadata = [
     {id:1, 
@@ -16,7 +17,8 @@ class Tapahtumat extends Component {
         return (
             <div>
                 <div>
-                <Tapahtuma lista={tapahtumadata}/>
+                    <Navigation user={this.props.user}/>
+                    <Tapahtuma lista={tapahtumadata}/>
                 </div>
             </div>
         );
