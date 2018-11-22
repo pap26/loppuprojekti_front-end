@@ -1,38 +1,38 @@
 import React, { Component } from 'react';
-import KirjauduSivu from './KirjauduSivu';
 import { auth } from '../firebase/auth';
-import App from '../App';
+import Etusivu from './Etusivu';
+import Kirjaudu from './Kirjaudu';
 
 class Kirjautumistarkistus extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            user: {},
-        }
+    constructor() {
+      super();
+      this.state = ({
+        user: null,
+      });
+      this.authListener = this.authListener.bind(this);
     }
-
-    componentDidMount(){
-        this.authListener();
+  
+    componentDidMount() {
+      this.authListener();
     }
-
+  
     authListener() {
-        console.log("authListener", auth);
-        auth.onAuthStateChanged((user) => { // käynnistyy kun auth-tilaa muutetaan
-            if (user) {
-                this.setState({ user });
-            } else {
-                this.setState({ user: null });
-            }
-        });
-    }    
-
-    render() { //jos tyyppi kirjautuneena, pääsee Alku-sivulle, jos ei, menee Kirjautumiseen
-        return (
-            <div> 
-                {this.state.user ? (<App/>) : (<KirjauduSivu/>)}
-            </div>
-        );
+      auth.onAuthStateChanged((user) => {
+        console.log(user);
+        if (user) {
+          this.setState({ user });
+        } else {
+          this.setState({ user: null });
+        }
+      });
+    }
+    render() {
+      return (
+        <div>
+            {this.state.user ? ( <Etusivu/>) : (<Kirjaudu />)}
+        </div>
+      );
     }
 }
-
-export default Kirjautumistarkistus;
+  
+   export default Kirjautumistarkistus;
