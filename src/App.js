@@ -22,7 +22,7 @@ const App = appProps => (
                 <Route path="/info" component={Info}/>
                 <Route path="/pelaajat" component={Pelaajat}/>
                 <Route path="/toimihenkilot" component={Toimihenkilot}/>
-                <Route path="/pelaajat/:id" component={UusiPelaaja}/>
+                <Route path="/pelaaja" component={UusiPelaaja}/>
                 <Route path="/pelaajalista" component={Pelaajalista}/>
 
             </Switch>

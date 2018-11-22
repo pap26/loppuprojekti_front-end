@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Navigation from './Navigation.js';
+import UusiPelaaja from "./UusiPelaaja";
 
 class Pelaajat extends Component {
 
@@ -7,13 +8,6 @@ class Pelaajat extends Component {
         ladataan: true,
         pelaajajoukko: []
     };
-
-/*    async ComponentDidMount() {
-        const response = await fetch('/api/pelaajat');
-        const body = await response.json();
-        this.setState({ pelaajajoukko: body, ladataan: false });
-EI MUUTEN TOIMI
-    }*/
 
     componentDidMount() {
         this.setState({ladataan: true});
@@ -44,11 +38,13 @@ EI MUUTEN TOIMI
                         )}
                 </div>
                 <hr/>
-                <p>Tähän tulee button link pelaajalistaan kun saadaan joskus toimivia linkkibuttoneita!!!!! Bootstrapin tyylit ei toimi wtf</p>
+                <p>Tähän tulee button link pelaajalistaan?</p>
+                <UusiPelaaja/>
 
             </div>
         );
     }
 }
+
 
 export default Pelaajat;
