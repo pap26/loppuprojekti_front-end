@@ -16,3 +16,89 @@ code {
 button {
   margin-top: 20px;
 }
+
+.tapahtuma_bg{
+  width: 409px;
+  background-clip: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  border: solid 1px  black;
+}
+
+.tapahtuma_main {
+  width: 408px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+}
+
+.tapahtuma_tyyppi {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding-right: 10px;
+}
+
+.tapahtuman_nimi{
+  color: white;
+}
+
+.tapahtuma_otsikko{
+  background-color: black;
+  text-align: left;
+  padding: 5px;
+}
+
+.tapahtuma_reg{
+  display:flex;
+  text-align: left;
+  padding: 10px;
+}
+
+.tapahtuma_paikka{
+  margin-top: 10px;
+  width: 250px;
+  margin-bottom: 15px;
+}
+
+.tapahtuma_aika{
+  width: 150px;
+}
+
+.pvm{
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.aika{
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.in_button{
+  width: 60px;
+  background-clip: gray;
+  margin-right: 5px;
+  margin-top: 30px;
+}
+
+.kartta{
+  width: 50px;
+}
+
+.saainfo{
+  width: auto;
+  height: 60px;
+  margin-right: 30px;
+}
+
+.weather{
+  width: auto;
+  height: 100%;
+}
+
+.flex{
+  display: flex;
+  justify-content: space-between;
+}

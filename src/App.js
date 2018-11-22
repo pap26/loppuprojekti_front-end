@@ -18,6 +18,7 @@ import './App.css';
       <Route path="/info" component={Info} />
       <Route path="/pelaajat" component={Pelaajat} />
       <Route path="/toimihenkilot" component={Toimihenkilot} />
+      
     </Switch>
   </div>
   </Router>
