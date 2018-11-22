@@ -22,6 +22,7 @@ class Kirjautumistarkistus extends Component {
         if (user) {
           this.setState({ user });
         } else {
+          // this.setState({ user }); <-- tällä pääsee kirjautumisen ohi
           this.setState({ user: null });
         }
       });
