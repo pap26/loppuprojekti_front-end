@@ -60,8 +60,8 @@ class Tapahtumat extends Component {
             <div>
 
                 <div>{tapahtumalista}</div>
-          <Navigation user={this.props.user}/>
-                    <Tapahtuma lista={tapahtumadata}/>
+          {/* <Navigation user={this.props.user}/>
+                    <Tapahtuma lista={tapahtumadata}/> */}
               
             </div>) ;
     }
