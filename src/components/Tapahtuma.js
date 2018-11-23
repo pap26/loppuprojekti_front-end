@@ -16,7 +16,7 @@ class Tapahtuma extends Component {
         })}
 
     render() {
-
+        console.log("Tapahtuma.render props", this.props);
         var tapahtumalista = this.props.lista.map((tapahtuma) =>{
            return (
             <div className="tapahtuma_main">
