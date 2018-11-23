@@ -24,11 +24,10 @@ class Navigation extends Component {
                 </Navbar.Header>
                 <Navbar.Collapse>
                     <Nav>
-                    <NavItem eventKey={1} href="/">Etusivu</NavItem>
-                    <NavItem eventKey={2} href="/tapahtumat">Tapahtumat</NavItem>
-                    <NavItem eventKey={3} href="/info">Info</NavItem>
-                    <NavItem eventKey={4} href="/pelaajat">Pelaajat</NavItem>
-                    <NavItem eventKey={5} href="/toimihenkilot">Toimihenkilöt</NavItem>
+                    <NavItem eventKey={1} href="/">Tapahtumat</NavItem>
+                    <NavItem eventKey={2} href="/Kalenteri">Kalenteri</NavItem>
+                    <NavItem eventKey={3} href="/pelaajat">Pelaajat</NavItem>
+                    <NavItem eventKey={4} href="/toimihenkilot">Toimihenkilöt</NavItem>
                     </Nav>
                     <Nav pullRight>
                     <NavItem eventKey={6} button onClick={this.logout} href="/">Kirjaudu ulos</NavItem>

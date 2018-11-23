@@ -18,6 +18,11 @@ button {
  margin-top: 35px;
 }
 
+.content{
+  width: 640px;
+  margin:auto;
+}
+
 .tapahtuma_bg, .instagram{
   width: 407px;
   background-color: white;
@@ -131,4 +136,13 @@ button {
 .ig_img img {
   width: 100%;
 }
+
+@media (max-width: 660px) {
+  .content {
+    width: 90%;
+  }
+
+}
+
+
 
