@@ -12,7 +12,8 @@ class Kirjaudu extends Component {
     this.state = {
       email: "",
       password: "",
-      error: false
+      error: false,
+      passwordReset: false
     };
   }
 
@@ -28,9 +29,7 @@ class Kirjaudu extends Component {
       .signInWithEmailAndPassword(this.state.email, this.state.password)
       .then(this.onLoginSuccess.bind(this))
       .catch(error => {
-        // this.setState({ error: true });
-        let errorCode = error.code;
-        this.onLoginFailure.bind(this)("Jaa nyt ei männynnä ihan niinku Strömssöössä. Koetappa uuvelleen.");
+        this.onLoginFailure.bind(this)("Tarkista sähköpostiosoitteesi ja salasanasi.");
         }
       );
   }
@@ -44,18 +43,27 @@ class Kirjaudu extends Component {
       email: "",
       password: "",
       error: "",
+      resetPassword: ""
     });
   }
 
   resetPassword(event) {
     event.preventDefault();
     console.log("resetPassword", auth);
-    auth.sendPasswordResetEmail(this.state.email).then(function() {
-      console.log('Sähköposti lähetetty')
-    }).catch(function(error) {
-      let errorCode = error.code;
-      console.log('Ei onnistu')
+    auth
+      .sendPasswordResetEmail(this.state.email)
+      .then(this.onResetSuccess.bind(this)("Linkki salasanan vaihtamiseen lähetetty sähköpostiisi."))      
+      .catch(error => {
+        this.onResetFailure.bind(this)("Sähköpostiosoitetta ei löydy. Koeta uudelleen.")
     });
+  }
+
+  onResetFailure(infoMessage) {
+    this.setState({ resetPassword: infoMessage });
+  }
+
+  onResetSuccess(infoMessage) {
+    this.setState({ resetPassword: infoMessage });
   }
 
   // // uusi käyttäjä kirjautuu, tämän voisi ottaa käyttöön mahdollisessa Admin-näkymässä. Alempana tämän käyttämä nappula.
@@ -73,7 +81,7 @@ class Kirjaudu extends Component {
   // }
 
   render() {
-    const { email, password, error } = this.state;
+    const { email, password, error, resetPassword } = this.state;
     return (
       <div>
         <img src={logo} className="App-logo" alt="logo" />
@@ -128,19 +136,15 @@ class Kirjaudu extends Component {
             </button>
           </form>
         </div>
-        <h2 style={styles.errorTextStyle}>{this.state.error}</h2>
+        <h2 style={styles.infoTextStyle}>{this.state.error}</h2>
+        <h2 style={styles.infoTextStyle}>{this.state.resetPassword}</h2>
       </div>
     );
   }
 }
 
 const styles = {
-  errorTextStyle: {
-    fontSize: 16,
-    alignSelf: "left",
-    color: "red"
-  },
-  messageTextStyle: {
+  infoTextStyle: {
     fontSize: 16,
     alignSelf: "left",
     color: "red"
