@@ -6,7 +6,21 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("img/pallo.jpg")
+  background-image: url("img/pallo.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.tausta{
+  max-height:100%;
+ 
+}
+
+.valikko{
+  position:fixed;
+  left:0px;
+  top:0px;
+  width: 100%;
 }
 
 code {
@@ -15,7 +29,7 @@ code {
 }
 
 button {
- margin-top: 35px;
+  margin: 3px;
 }
 
 .content{
@@ -30,6 +44,20 @@ button {
   margin-right: auto;
   margin-top: 40px;
   border: solid 1px  black;
+}
+
+.tapahtuma_bg{
+  margin-top: 100px;
+}
+
+.pelaajat_bg {
+  margin-top: 100px;
+  width: 407px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid 1px  black;
+  padding: 10px;
 }
 
 .instagram{
@@ -135,6 +163,61 @@ button {
 
 .ig_img img {
   width: 100%;
+}
+
+.pelaajataulukko td, .pelaajataulukko th {
+  text-align: left;
+  padding: 5px;
+}
+
+.pelaaja_napit {
+  padding-right: 20px;
+  
+}
+
+.pelaaja_napit button{
+  margin-left:0;
+}
+
+.pelaaja_img{
+  width:170px;
+  height: 170px;
+  border: solid 1px  black;
+}
+
+.kaksipalstaa{
+  width: 170px;
+  diplay: flex;
+  flex-direction: row;
+}
+
+.flexpalstat{
+  display: flex;   
+  flex-wrap: wrap;
+}
+
+.pelaaja_ruutu{
+  width: 170px;
+  text-align: left;
+  margin-right: 5px;
+  margin-top: 10px;
+}
+
+.pelaajannimi{
+  width: 170px;
+  height: 50px;
+  background-color: black;
+  display: block;
+  text-align: center;
+  padding-top: 7px;
+  margin-top: -35px;
+  color: white;
+}
+
+.pelinumero{
+  font-weight: 600;
+  font-size: 30px;
+  margin-right: 5px;
 }
 
 @media (max-width: 660px) {

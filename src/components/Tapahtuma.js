@@ -67,8 +67,12 @@ class Tapahtuma extends Component {
 
         return (
             <div>
-                <div>{tapahtumalista}</div>
+                <div>{tapahtumalista}
                 <div>{this.state.displayKartta && <Kartta />}</div>
+                
+                
+                </div>
+                
             </div>) ;
     }
 }

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 class Pelaajalista extends Component {
-
     constructor(props) {
         super(props);
         this.state = {pelaajat: [], ladataan: true};
@@ -38,38 +37,31 @@ class Pelaajalista extends Component {
 
         const pelaajalista = pelaajat.map(pelaaja => {
             const pelaajanimi = `${pelaaja.etunimi || ''} ${pelaaja.sukunimi || ''}`;
-            return <tr key={pelaaja.id}>
-                <td>{pelaaja.numero}</td>
-                <td>{pelaajanimi}</td>
-                <td>{pelaaja.pelipaikka}</td>
-                <td>
+            return (
+                <div>
+                    <div className="pelaaja_ruutu">
+                    {/* <div>key={pelaaja.id}</div> */}
+                    <div className="pelaaja_img"></div>
+                    <div className="pelaajannimi">
+                        <span className="pelinumero">{pelaaja.numero}</span>
+                        <span>{pelaajanimi}</span>
+                        
+                    </div>
+                
+                     <div className="pelaaja_napit">
                         <button href="/pelaajat/:id">Muokkaa</button>
-                        <button onClick={() => this.remove(pelaaja.id)}>Poista</button>
-                </td>
-            </tr>
+                        <button onClick={() => this.remove(pelaaja.id)}>Poista</button> 
+                    </div>
+                    </div>
+                </div>)
+    
         });
 
         return (
             <div>
-                    <div className="adminPelaajalista1">
-                        <button href="">Lisää pelaaja</button>
-                    </div>
-
-                    <h3>Jotain tähän</h3>
-
-                    <table className="adminPelaajalista2">
-                        <thead>
-                        <tr>
-                            <th>Pelinumero</th>
-                            <th>Nimi</th>
-                            <th>Pelipaikka</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {pelaajalista}
-                        </tbody>
-                    </table>
-
+                <h3>Pelaajat</h3>
+                <button href="">Lisää pelaaja</button>
+                <div className="flexpalstat" >{pelaajalista}</div>
             </div>
         );
     }
