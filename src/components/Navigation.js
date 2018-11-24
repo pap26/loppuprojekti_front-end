@@ -14,7 +14,8 @@ class Navigation extends Component {
 
     render() {
         return (
-            <Navbar staticTop>
+            <div className="valikko">
+            <Navbar staticTop >
                 <Navbar.Header>
                     <Navbar.Brand>
                         KopseT04-05
@@ -34,6 +35,7 @@ class Navigation extends Component {
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
+            </div>
         );
     }
 }
