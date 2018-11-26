@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Navbar, Nav, NavItem, NavDropdown, MenuItem} from 'react-bootstrap';
+import {Navbar, Nav, NavItem} from 'react-bootstrap';
 import { auth } from "../firebase/auth";
 
 class Navigation extends Component {
@@ -14,7 +14,8 @@ class Navigation extends Component {
 
     render() {
         return (
-            <Navbar staticTop>
+            <div className="valikko">
+            <Navbar staticTop >
                 <Navbar.Header>
                     <Navbar.Brand>
                         KopseT04-05
@@ -34,6 +35,7 @@ class Navigation extends Component {
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
+            </div>
         );
     }
 }

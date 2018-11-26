@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Navigation from './Navigation.js';
 import UusiPelaaja from "./UusiPelaaja";
 
 class Pelaajat extends Component {
@@ -28,7 +27,7 @@ class Pelaajat extends Component {
 
         return (
             <div>
-                <Navigation/>
+
                 <div className={"Pelaajat1"}>
                 <h1>Pelaajat</h1>
                     {pelaajajoukko.map(pelaaja =>

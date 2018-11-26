@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import{ BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Kirjaudu from './components/Kirjaudu.js';
 import Etusivu from './components/Etusivu.js';
-import Pelaajat from './components/Pelaajat.js';
+import PelaajatSivu from './components/PelaajatSivu.js';
 import Toimihenkilot from './components/Toimihenkilot.js';
-import TapahtumatSivu from './components/TapahtumatSivu.js';
-import Info from './components/Info';
+import Kalenteri from './components/Kalenteri.js';
 import './App.css';
-import Kalenteri from './components/Kalenteri';
 import UusiPelaaja from "./components/UusiPelaaja";
+import PelaajakorttiSivu from "./components/PelaajakorttiSivu";
 import Pelaajalista from "./components/Pelaajalista";
 
 
@@ -17,13 +16,11 @@ const App = appProps => (
         <div className="App">
             <Switch>
                 <Route exact name="index" path="/" component={Etusivu}/>
-                {/* <Route path="/login" component={Kirjaudu} /> */}
-                <Route path="/tapahtumat" component={TapahtumatSivu} />
-                <Route path="/kalenteri" component={Kalenteri}/>
-                <Route path="/info" component={Info}/>
-                <Route path="/pelaajat" component={Pelaajat}/>
+                <Route path="/login" component={Kirjaudu} />
+                <Route path="/kalenteri" component={Kalenteri} />
+                <Route path="/pelaajat" component={PelaajatSivu}/>
                 <Route path="/toimihenkilot" component={Toimihenkilot}/>
-                <Route path="/pelaaja" component={UusiPelaaja}/>
+                <Route path="/pelaaja" component={PelaajakorttiSivu}/>
                 <Route path="/pelaajalista" component={Pelaajalista}/>
             </Switch>
         </div>
