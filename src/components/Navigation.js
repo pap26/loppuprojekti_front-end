@@ -39,8 +39,3 @@ class Navigation extends Component {
 }
 
 export default Navigation;
-
-// {this.props.user?
-//     <NavItem eventKey={6} href="/kirjaudu">Kirjaudu ulos</NavItem> :
-//     <NavItem eventKey={7} href="/kirjaudu">Kirjaudu sisään</NavItem>
-// }

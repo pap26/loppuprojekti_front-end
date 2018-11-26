@@ -7,6 +7,7 @@ import Toimihenkilot from './components/Toimihenkilot.js';
 import TapahtumatSivu from './components/TapahtumatSivu.js';
 import Info from './components/Info';
 import './App.css';
+import Kalenteri from './components/Kalenteri';
 import UusiPelaaja from "./components/UusiPelaaja";
 import Pelaajalista from "./components/Pelaajalista";
 
@@ -16,8 +17,9 @@ const App = appProps => (
         <div className="App">
             <Switch>
                 <Route exact name="index" path="/" component={Etusivu}/>
-                <Route path="/login" component={Kirjaudu} />
-                 <Route path="/tapahtumat" component={TapahtumatSivu} />
+                {/* <Route path="/login" component={Kirjaudu} /> */}
+                <Route path="/tapahtumat" component={TapahtumatSivu} />
+                <Route path="/kalenteri" component={Kalenteri}/>
                 <Route path="/info" component={Info}/>
                 <Route path="/pelaajat" component={Pelaajat}/>
                 <Route path="/toimihenkilot" component={Toimihenkilot}/>

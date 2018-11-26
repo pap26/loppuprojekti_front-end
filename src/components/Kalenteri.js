@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
+import Joulukalenteri from './Joulukalenteri';
+import Navigation from './Navigation';
 
-class componentName extends Component {
+class Kalenteri extends Component {
 
     render() {
         return (
             <div>
-                <h1>Kalenteri</h1>
-
+                <Navigation />
+                <Joulukalenteri />
             </div>
         );
     }
 }
 
-export default componentName;
+export default Kalenteri;
