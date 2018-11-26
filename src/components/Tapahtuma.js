@@ -1,29 +1,48 @@
 import React, { Component } from 'react';
 import weather from '../img/weather.png';
-import Kartta from './Kartta.js';
+import Googlekartta from './Googlekartta.js';
 
 
 class Tapahtuma extends Component {
     constructor(props) {
         super(props);
-        this.state = {displayKartta: false};
+        this.state = {
+            // displayKartta: false
+            lista: [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        };
       }
 
-    displayKartta = () => {
+    displayKartta = (i) => {
+        var temp = this.state.lista;
+        temp[i] = !this.state.lista[i];
         this.setState({
+            lista: temp
         //displayKartta: true
-        displayKartta: !this.state.displayKartta
+        // displayKartta: !this.state.displayKartta
         })}
+
 
     render() {
         console.log("Tapahtuma.render props", this.props);
-        var tapahtumalista = this.props.lista.map((tapahtuma) =>{
+        var tapahtumalista = this.props.lista.map((tapahtuma, i) =>{
+            
            return (
             <div className="tapahtuma_main">
+
                 <div className="tapahtuma_otsikko"> 
                     <span className="tapahtuma_tyyppi">{tapahtuma.summary}</span>
                </div>
-
                <div className="tapahtuma_reg">
                     <div className="tapahtuma_aika">
                       <div className="pvm">
@@ -52,28 +71,22 @@ class Tapahtuma extends Component {
                         <div className="tapahtuma_paikka">{tapahtuma.location}</div>
                         <div className="flex">
                             <div className="kartta">
-                            <button className="karttabutton " onClick={this.displayKartta}>Kartta</button>
+                            <button className="karttabutton " onClick={this.displayKartta.bind(this, i)}>Kartta</button>
                             </div>
                             <div className="saainfo"><img src={weather} className="weather" alt="weather" /></div> 
                         </div>
                     </div>
                </div>
+                <div className="kartta">{this.state.lista[i] && <Googlekartta lokaatio= {tapahtuma.location} />}
+                </div>
             </div>
            ) 
         })
-        
-        
-
 
         return (
             <div>
-                <div>{tapahtumalista}
-                <div>{this.state.displayKartta && <Kartta />}</div>
-                
-                
-                </div>
-                
-            </div>) ;
+                <div>{tapahtumalista} </div>
+            </div>);
     }
 }
 
