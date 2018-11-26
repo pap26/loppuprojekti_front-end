@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Navigation from './Navigation.js';
 import UusiPelaaja from "./UusiPelaaja";
 
 class Pelaajat extends Component {

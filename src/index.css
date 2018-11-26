@@ -65,7 +65,8 @@ button {
 }
 
 .tapahtuma_main {
-  width: 405px;
+  /* width: 405px; */
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 5px;
@@ -86,6 +87,7 @@ button {
   background-color: black;
   text-align: left;
   padding: 5px;
+  width: 100%;
 }
 
 .tapahtuma_reg{
@@ -220,9 +222,25 @@ button {
   margin-right: 5px;
 }
 
-@media (max-width: 660px) {
-  .content {
+@media (max-width: 500px) {
+  .pelaajat_bg, .tapahtuma_bg {
     width: 90%;
+  }
+
+  .tapahtuma_reg{
+    display: inline;
+    padding-top: 0;
+    padding-left: 10px;
+    /* padding: 0px; */
+  }
+
+  .tapahtuma_paikka {
+    width: 60%;
+  }
+
+  .tapahtuma_aika, .tapahtuma_paikka, .kartta{
+    padding-top: 0px;
+    padding-left: 10px;
   }
 
 }
