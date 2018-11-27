@@ -6,6 +6,7 @@ import PelaajatSivu from './components/PelaajatSivu.js';
 import Toimihenkilot from './components/Toimihenkilot.js';
 import Kalenteri from './components/Kalenteri.js';
 import './App.css';
+import UusiPelaaja from "./components/UusiPelaaja";
 import PelaajakorttiSivu from "./components/PelaajakorttiSivu";
 import Pelaajalista from "./components/Pelaajalista";
 

@@ -22,11 +22,11 @@ class Kartta extends Component {
             onClick={this.onMapClicked}
             >
  
-        <InfoWindow onClose={this.onInfoWindowClose}>
+        {/* <InfoWindow onClose={this.onInfoWindowClose}>
             {/* <div>
               <h1>{this.state.selectedPlace.name}</h1>
             </div> */}
-        </InfoWindow>
+        {/* </InfoWindow> */} */}
       </Map>
       </div>
         );
