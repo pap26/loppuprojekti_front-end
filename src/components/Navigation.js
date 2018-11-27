@@ -26,12 +26,12 @@ class Navigation extends Component {
                 <Navbar.Collapse>
                     <Nav>
                     <NavItem eventKey={1} href="/">Tapahtumat</NavItem>
-                    <NavItem eventKey={2} href="/Kalenteri">Kalenteri</NavItem>
-                    <NavItem eventKey={3} href="/pelaajat">Pelaajat</NavItem>
-                    <NavItem eventKey={4} href="/toimihenkilot">Toimihenkilöt</NavItem>
+                    <NavItem eventKey={2} href="/pelaajat">Pelaajat</NavItem>
+                    <NavItem eventKey={3} href="/toimihenkilot">Toimihenkilöt</NavItem>
+                    <NavItem eventKey={4} href="/kalenteri">Kalenteri</NavItem>
                     </Nav>
                     <Nav pullRight>
-                    <NavItem eventKey={6} button onClick={this.logout} href="/">Kirjaudu ulos</NavItem>
+                    <NavItem eventKey={5} button onClick={this.logout} href="/">Kirjaudu ulos</NavItem>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
@@ -41,8 +41,3 @@ class Navigation extends Component {
 }
 
 export default Navigation;
-
-// {this.props.user?
-//     <NavItem eventKey={6} href="/kirjaudu">Kirjaudu ulos</NavItem> :
-//     <NavItem eventKey={7} href="/kirjaudu">Kirjaudu sisään</NavItem>
-// }

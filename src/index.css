@@ -1,9 +1,11 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: 'Open Sans', sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+    sans-serif; */
+  font-size: 1.5em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url("img/pallo.jpg");
@@ -13,7 +15,30 @@ body {
 
 .tausta{
   max-height:100%;
- 
+}
+
+h2{
+  font-family: 'Black Ops One', Arial, Helvetica, sans-serif;
+  font-size: 50px;
+}
+
+h3{
+  font-family: 'Black Ops One', Arial, Helvetica, sans-serif;
+  font-size: 35px;
+}
+
+.toimihenkilot .nimi{
+  font-weight: 700;
+}
+
+.toimihenkilot{
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+.toimihenkilot, td{
+  text-align: left;
+  padding: 5px;
 }
 
 .valikko{
@@ -21,6 +46,7 @@ body {
   left:0px;
   top:0px;
   width: 100%;
+  z-index: 10;
 }
 
 code {
@@ -28,9 +54,9 @@ code {
     monospace;
 }
 
-button {
+/* button {
   margin: 3px;
-}
+} */
 
 .content{
   width: 640px;
@@ -44,10 +70,22 @@ button {
   margin-right: auto;
   margin-top: 40px;
   border: solid 1px  black;
+  padding-bottom: 10px;
 }
 
 .tapahtuma_bg{
   margin-top: 100px;
+}
+
+.kirjaudu_bg{
+  margin-top: 100px;
+  width: 407px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  border: solid 1px  black;
+  padding: 20px;
 }
 
 .pelaajat_bg {
@@ -72,16 +110,39 @@ button {
   margin-bottom: 5px;
 }
 
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
 .tapahtuma_tyyppi {
-  color: white;
+  color:#FFC312;
   text-transform: uppercase;
   font-weight: 500;
   padding-right: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .tapahtuman_nimi{
   color: white;
 }
+
+
 
 .tapahtuma_otsikko{
   background-color: black;
@@ -108,12 +169,12 @@ button {
 
 .pvm{
   font-size: 30px;
-  font-weight: 500;
+  font-family: 'Black Ops One', Arial, Helvetica, sans-serif;
 }
 
 .aika{
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .in_button{
@@ -158,6 +219,10 @@ button {
   height: 300px;
 }
 
+.hidden{
+  display: none;
+}
+
 .ig_img {
   width: 100px;
   height: auto;
@@ -165,6 +230,46 @@ button {
 
 .ig_img img {
   width: 100%;
+}
+
+/* joulukalenterin tyylit */
+
+.calendar {
+  padding: 1rem;
+  display: grid;
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 1rem;
+  grid-column-gap: 3rem;
+}
+
+.door > .door-opened > img,
+.door > .door-closed > img {
+  width: 11rem;
+  height: 11rem;
+  object-fit: cover;
+}
+
+.door {
+  height: 11rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.door > .day {
+  /* background: #01364e; */
+  padding: 1rem;
+  flex: 1;
+  color: #fff;
+  font-weight: bold;
+  font-size: 2rem;
+  position: absolute;
+  bottom: -1rem;
+  width: 11rem;
+  text-align: center;
 }
 
 .pelaajataulukko td, .pelaajataulukko th {
@@ -177,19 +282,22 @@ button {
   
 }
 
-.pelaaja_napit button{
+.pelaaja_napit {
   margin-left:0;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
 }
 
 .pelaaja_img{
-  width:170px;
-  height: 170px;
+  width:183px;
+  height: 183px;
   border: solid 1px  black;
 }
 
 .kaksipalstaa{
-  width: 170px;
-  diplay: flex;
+  width: 183px;
+  display: flex;
   flex-direction: row;
 }
 
@@ -199,27 +307,58 @@ button {
 }
 
 .pelaaja_ruutu{
-  width: 170px;
+  width: 190px;
   text-align: left;
-  margin-right: 5px;
+  margin-right: 0px;
   margin-top: 10px;
+  position: relative;
+}
+
+.pelinumero_box{
+  font-size: 26px;
+  margin-right: 5px;
+  font-family: 'Black Ops One', Arial, Helvetica, sans-serif;
+  padding:5px;
+  padding-right: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .pelaajannimi{
-  width: 170px;
-  height: 50px;
+  width: 183px;
+  height: 35px;
   background-color: black;
   display: block;
-  text-align: center;
+  text-align: left;
   padding-top: 7px;
+  padding-left: 10px;
   margin-top: -35px;
   color: white;
 }
 
 .pelinumero{
-  font-weight: 600;
-  font-size: 30px;
+  font-size: 26px;
   margin-right: 5px;
+  font-family: 'Black Ops One', Arial, Helvetica, sans-serif;
+  padding:5px;
+  padding-left: 10px;
+}
+
+.btn {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.kartta_btn{
+  margin-top: 34px;
+  background-color: #A3CB38;
+  /* background-color:#FFC312; */
+}
+
+.kirjaudu_btn{
+  margin: 3px;
 }
 
 @media (max-width: 500px) {
@@ -244,6 +383,3 @@ button {
   }
 
 }
-
-
-

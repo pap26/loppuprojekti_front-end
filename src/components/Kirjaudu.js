@@ -81,11 +81,10 @@ class Kirjaudu extends Component {
   // }
 
   render() {
-    const { email, password, error, resetPassword } = this.state;
     return (
       <div>
-        <img src={logo} className="App-logo" alt="logo" />
-        <div className="col-md-3">
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        <div>
           <form>
             <div className="form-group">
               <label htmlFor="exampleInputEmail1">Sähköposti</label>
@@ -114,7 +113,7 @@ class Kirjaudu extends Component {
             <button
               type="submit"
               onClick={this.login}
-              className="btn btn-primary"
+              className="btn btn-success kirjaudu_btn"
             >
               Kirjaudu
             </button>
@@ -130,7 +129,7 @@ class Kirjaudu extends Component {
             <button
               type="submit"
               onClick={this.resetPassword}
-              className="btn btn-primary"
+              className="btn btn-success kirjaudu_btn"
             >
               Vaihda salasana
             </button>

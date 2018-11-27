@@ -9,7 +9,8 @@ class TapahtumaSivu extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            tapahtumat: []
+            tapahtumat: [],
+            ladattu: false
         }
 
     }
@@ -24,26 +25,29 @@ class TapahtumaSivu extends Component {
         // yllä ole ennemmin response.json, koska usein haetaan jsonia
         .then(data=> {
             // jos haet esim jsonista kysysmys-tietoa, käytä json.kysymys
-            this.setState({tapahtumat: data})
+            this.setState({tapahtumat: data, ladattu: true})
             });
     }; 
 
 
     render() {
-        console.log(this.state.tapahtumat)
+        // console.log(this.state.tapahtumat)
+
+        const naytaTapahtuma = this.state.ladattu ? 'tapahtuma_bg' : 'tapahtuma_bg hidden';
+        const naytaInsta = this.state.ladattu ? '' : 'hidden';
     
         return (
             <div>
                 <div className="tausta">
-                <Navigation />
-                <div className="tapahtuma_bg">
-                <Tapahtuma lista={this.state.tapahtumat}/>
+                    <Navigation />
+                    <div className={naytaTapahtuma}>
+                        <Tapahtuma lista={this.state.tapahtumat} />
+                    </div>
+                    <div className={naytaInsta}>
+                        <Instagram  />
+                    </div>
                 </div>
-                <div className="instagam">
-                <Instagram />
-                </div>
-                </div>
-            </div>
+            </div>  
         );
     }
 }
