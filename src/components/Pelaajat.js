@@ -37,7 +37,7 @@ class Pelaajat extends Component {
                         )}
                 </div>
                 <hr/>
-                <p>Tähän tulee button link pelaajalistaan?</p>
+                <p>Tämä on placeholder-sivu</p>
                 <UusiPelaaja/>
 
             </div>
