@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import UusiPelaaja from "./UusiPelaaja";
 
 class Pelaajat extends Component {
-
     state = {
         ladataan: true,
         pelaajajoukko: []

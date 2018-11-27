@@ -42,15 +42,16 @@ class Pelaajalista extends Component {
                     <div className="pelaaja_ruutu">
                     {/* <div>key={pelaaja.id}</div> */}
                     <div className="pelaaja_img"></div>
+                    <div className="pelinumero_box">{pelaaja.numero}</div>
                     <div className="pelaajannimi">
-                        <span className="pelinumero">{pelaaja.numero}</span>
+                        {/* <span className="pelinumero">{pelaaja.numero}</span> */}
                         <span>{pelaajanimi}</span>
                         
                     </div>
                 
                      <div className="pelaaja_napit">
-                        <button href="/pelaajat/:id">Muokkaa</button>
-                        <button onClick={() => this.remove(pelaaja.id)}>Poista</button> 
+                        <button className="btn btn-light" href="/pelaajat/:id">Muokkaa</button>
+                        <button className="btn btn-light" onClick={() => this.remove(pelaaja.id)}>Poista</button> 
                     </div>
                     </div>
                 </div>)
@@ -60,7 +61,7 @@ class Pelaajalista extends Component {
         return (
             <div>
                 <h3>Pelaajat</h3>
-                <button href="">Lisää pelaaja</button>
+                <button className="btn btn-light" href="">Lisää pelaaja</button>
                 <div className="flexpalstat" >{pelaajalista}</div>
             </div>
         );

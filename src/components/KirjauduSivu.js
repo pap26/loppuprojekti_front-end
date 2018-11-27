@@ -5,9 +5,15 @@ class KirjauduSivu extends Component {
 
     render() {
         return (
-
-            <Kirjaudu {...this.props}/>
+            <div>
+                <div>
+                 <div className="kirjaudu_bg">
+                    <h2>kotikenttä </h2>
+                    <Kirjaudu />
+                    </div>
+                </div>
             
+            </div>
         );
     }
 }

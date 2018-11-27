@@ -1,9 +1,9 @@
 import React from 'react';
 import{ BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Kirjaudu from './components/Kirjaudu.js';
+import KirjauduSivu from './components/KirjauduSivu.js';
 import Etusivu from './components/Etusivu.js';
 import PelaajatSivu from './components/PelaajatSivu.js';
-import Toimihenkilot from './components/Toimihenkilot.js';
+import ToimihenkilotSivu from './components/ToimihenkilotSivu.js';
 import Kalenteri from './components/Kalenteri.js';
 import './App.css';
 import PelaajakorttiSivu from "./components/PelaajakorttiSivu";
@@ -15,10 +15,10 @@ const App = appProps => (
         <div className="App">
             <Switch>
                 <Route exact name="index" path="/" component={Etusivu}/>
-                <Route path="/login" component={Kirjaudu} />
+                <Route path="/login" component={KirjauduSivu} />
                 <Route path="/kalenteri" component={Kalenteri} />
                 <Route path="/pelaajat" component={PelaajatSivu}/>
-                <Route path="/toimihenkilot" component={Toimihenkilot}/>
+                <Route path="/toimihenkilot" component={ToimihenkilotSivu}/>
                 <Route path="/pelaaja" component={PelaajakorttiSivu}/>
                 <Route path="/pelaajalista" component={Pelaajalista}/>
             </Switch>
