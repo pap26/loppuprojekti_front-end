@@ -1,12 +1,10 @@
 import React, { Component } from "react";
-import logo from "../img/kopse_logo.png";
 import { auth } from "../firebase/auth";
 
 class Kirjaudu extends Component {
   constructor(props) {
     super(props);
     this.login = this.login.bind(this);
-    // this.signup = this.signup.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.resetPassword = this.resetPassword.bind(this);
     this.state = {
@@ -66,20 +64,6 @@ class Kirjaudu extends Component {
     this.setState({ resetPassword: infoMessage });
   }
 
-  // // uusi käyttäjä kirjautuu, tämän voisi ottaa käyttöön mahdollisessa Admin-näkymässä. Alempana tämän käyttämä nappula.
-  // signup(event) {
-  //     event.preventDefault();
-  //     console.log("signup", auth);
-  //     auth
-  //       // .auth()
-  //       .createUserWithEmailAndPassword(this.state.email, this.state.password)
-  //       .then((u) => {})
-  //       .catch(error => {
-  //           console.log(error);
-  //       });
-  //       console.log('Onnistui')
-  // }
-
   render() {
     return (
       <div>
@@ -117,14 +101,6 @@ class Kirjaudu extends Component {
             >
               Kirjaudu
             </button>
-
-            {/* <button
-              onClick={this.signup}
-              style={{ marginLeft: "25px" }}
-              className="btn btn-success"
-            >
-              Uusi käyttäjä
-            </button> */}
 
             <button
               type="submit"

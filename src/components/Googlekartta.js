@@ -13,6 +13,9 @@ class Googlekartta extends Component {
     }
 
     componentDidMount = () => {
+         //Tässä kohtaa Tapahtumalistasta tuodaan propseina lokaatio (esim. Paloheinän TN, Helsinki) ja  
+        //viedään tieto serviseClientissä olevaan haeLokaatio-funktioon. Sieltä saamme paikan koordinaatit (lat ja lng),
+        //jotka asetetaan stateen. -pz
         haeLokaatio(this.props.lokaatio, (lat, lng) => {
             this.setState({lat:lat, lng:lng});
             console.log("Haettu state", this.state);
@@ -27,20 +30,18 @@ class Googlekartta extends Component {
           }
           
         
-        console.log("renderin tuloste", this.state);
+        console.log("Kartta-renderin tuloste", this.state);
         return (
-            <div className="google_map">
-           
-            
-        <Map 
-            google={this.props.google} 
-            style={style}
-            center={this.state} 
-            zoom={14}>
-            <Marker
-            position={this.state} />
-        </Map>
-        </div>
+            <div className="google_map">    
+           <Map 
+                google={this.props.google} 
+                style={style}
+                center={this.state} 
+                zoom={15}>
+                    {/* Marker on kartassa näkyvä osoitinmerkki */}
+                    <Marker position={this.state} />
+            </Map>
+         </div>
         );
     }
 }

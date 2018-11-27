@@ -3,7 +3,6 @@ import axios from "axios";
 
 
 class UusiPelaaja extends Component {
-
     state = {
         etunimi: '',
         sukunimi: '',
@@ -14,6 +13,7 @@ class UusiPelaaja extends Component {
         puhnro: '',
         info: '',
         kuvapolku:'',
+
 
     }
 
@@ -79,78 +79,87 @@ class UusiPelaaja extends Component {
     render() {
         return (
             <div className={"LomakeAdd"}>
-                <form className="uusipelaaja" onSubmit={this.handleSubmit}>
-                    <label htmlFor="etunimi">Etunimi:</label>
-                    <input
-                        name="etunimi"
-                        id="etunimi"
-                        type="text"
-                        onChange={this.handleEtunimiChange}/>
-                    <br/>
-                    <label htmlFor="sukunimi">Sukunimi:</label>
-                    <input
-                        name="sukunimi"
-                        id="sukunimi"
-                        type="text"
-                        onChange={this.handleSukunimiChange}/>
-                    <br/>
-                    <label htmlFor="numero">Numero:</label>
-                    <input
-                        name="numero"
-                        id="numero"
-                        type="text"
-                        onChange={this.handleNumeroChange}/>
-                    <br/>
-                    <label htmlFor="pelipaikka">Pelipaikka:</label>
-                    <select
-                        name="pelipaikka"
-                        id="pelipaikka"
-                        onChange={this.handlePelipaikkaChange}>
-                        <option value="maalivahti">Veskari</option>
-                        <option value="toppari">Toppari</option>
-                        <option value="laitapuolustaja">Laitapuolustaja</option>
-                        <option value="keskikenttapelaaja">Keskikenttäpelaaja</option>
-                        <option value="hyökkääjä">Hyökkääjä</option>
-                    </select>
-                    <br/>
-                    <label htmlFor="syntymaaika">Syntymaaika:</label>
-                    <input
-                        name="syntymaaika"
-                        id="syntymaaika"
-                        type="date"
-                        onChange={this.handleSyntymaaikaChange}/>
 
-                    <br/>
-                    <label htmlFor="email">Sähköposti:</label>
-                    <input
-                        name="email"
-                        id="email"
-                        type="email"
-                        onChange={this.handleEmailChange}/>
-                    <br/>
-                    <label htmlFor="puhnro">Puhelinnumero:</label>
-                    <input
-                        name="puhnro"
-                        id="puhnro"
-                        type="text"
-                        onChange={this.handlePuhnroChange}/>
-                    <br/>
-                    <label htmlFor="kuvapolku">Kuvan osoite:</label>
-                    <input
-                        name="kuvapolku"
-                        id="kuvapolku"
-                        type="text"
-                        onChange={this.handleKuvapolkuChange}/>
-
-                    <br/>
-                    <label htmlFor="info">Esittely:</label>
-                    <textarea
-                        name="info"
-                        id="info"
-                        onChange={this.handleInfoChange}/>
-                    <br/>
-
-                    <button type='submit'>Lisää pelaaja</button>
+                <form className="upelaaja" onSubmit={this.handleSubmit}>
+                <table>
+                    <tr>
+                        <td><label htmlFor="etunimi">Etunimi:</label></td>
+                        <td><input
+                            name="etunimi"
+                            id="etunimi"
+                            type="text"
+                            onChange={this.handleEtunimiChange}/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label htmlFor="sukunimi">Sukunimi:</label></td>
+                        <td> <input
+                            name="sukunimi"
+                            id="sukunimi"
+                            type="text"
+                            onChange={this.handleSukunimiChange}/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label htmlFor="numero">Numero:</label></td>
+                        <td> <input
+                            name="numero"
+                            id="numero"
+                            type="text"
+                            onChange={this.handleNumeroChange}/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label htmlFor="pelipaikka">Pelipaikka:</label></td>
+                        <td>  <select
+                            name="pelipaikka"
+                            id="pelipaikka"
+                            onChange={this.handlePelipaikkaChange}>
+                            <option value="maalivahti">Veskari</option>
+                            <option value="toppari">Toppari</option>
+                            <option value="laitapuolustaja">Laitapuolustaja</option>
+                            <option value="keskikenttapelaaja">Keskikenttäpelaaja</option>
+                            <option value="hyökkääjä">Hyökkääjä</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label htmlFor="syntymaaika">Syntymaaika:</label></td>
+                        <td> <input
+                            name="syntymaaika"
+                            id="syntymaaika"
+                            type="date"
+                            onChange={this.handleSyntymaaikaChange}/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label htmlFor="email">Sähköposti:</label></td>
+                        <td>  <input
+                            name="email"
+                            id="email"
+                            type="email"
+                            onChange={this.handleEmailChange}/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label htmlFor="puhnro">Puhelinnumero:</label></td>
+                        <td> <input
+                            name="puhnro"
+                            id="puhnro"
+                            type="text"
+                            onChange={this.handlePuhnroChange}/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label htmlFor="info">Esittely:</label></td>
+                        <td> <textarea
+                            name="info"
+                            id="info"
+                            onChange={this.handleInfoChange}/>
+                        </td>
+                    </tr>
+                </table>
+                    <button className="btn btn-light" type='submit'>Tallenna</button>
                 </form>
             </div>
         )

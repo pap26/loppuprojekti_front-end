@@ -1,5 +1,13 @@
+/*värit
+
+tumma harmaa #1C1C1C
+tummempi harmaa #151515
+
+*/
+
 body {
   margin: 0;
+  color: #1C1C1C;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -17,14 +25,37 @@ body {
   max-height:100%;
 }
 
-h2{
+/*----------tekstityylit---------- */
+
+h2, h3, h4 {
   font-family: 'Black Ops One', Arial, Helvetica, sans-serif;
+}
+
+h2{
   font-size: 50px;
 }
 
 h3{
-  font-family: 'Black Ops One', Arial, Helvetica, sans-serif;
   font-size: 35px;
+}
+
+h4{
+  font-size: 25px;
+}
+
+.tiedot{
+  background-color:#1C1C1C;
+  padding: 5px;
+  margin-top: 5px;
+  color: rgba(255, 255, 255, 1);
+  width: 100%;
+  display: block;
+}
+
+.center{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .toimihenkilot .nimi{
@@ -52,6 +83,17 @@ h3{
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.lohko{
+  margin-top: 40px;
+  text-align: left;
+  padding: 5px;
+}
+
+.upelaaja{
+  text-align: left;
+
 }
 
 /* button {
@@ -145,7 +187,7 @@ code {
 
 
 .tapahtuma_otsikko{
-  background-color: black;
+  background-color: #151515;
   text-align: left;
   padding: 5px;
   width: 100%;
@@ -197,6 +239,13 @@ code {
 .weather{
   width: auto;
   height: 100%;
+  
+}
+
+.lampotila{
+  width: auto;
+  text-align: center;
+  font-weight: 600;
 }
 
 .flex{
@@ -272,14 +321,11 @@ code {
   text-align: center;
 }
 
+/* ----------------pelaajasivut------------*/
+
 .pelaajataulukko td, .pelaajataulukko th {
   text-align: left;
   padding: 5px;
-}
-
-.pelaaja_napit {
-  padding-right: 20px;
-  
 }
 
 .pelaaja_napit {
@@ -287,13 +333,97 @@ code {
   display: flex;
   justify-content: space-between;
   margin-top: 6px;
+  padding-right: 20px;
 }
 
-.pelaaja_img{
-  width:183px;
+.pelaaja_img {
+  width:184px;
   height: 183px;
+  /* object-fit: cover; */
+  z-index: 0;
+  margin-top: -1px;
   border: solid 1px  black;
 }
+
+.pelaaja_img > img{
+  width:182.5px;
+  height: 148px;
+  object-fit: cover;
+  margin-left: -0.5px;
+  /* border: solid 1px  black; */
+}
+
+.pelaaja_img_isompi{
+  width:184px;
+  height: 183px;
+  z-index: 0;
+  margin-top: -1px;
+  border: solid 1px  black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pelaaja_img_isompi > img{
+  width:182.5px;
+  height: 182px;
+  object-fit: cover;
+  margin-top: -0.5px;
+}
+
+.pelaajannimi_box{
+  z-index: 8;
+}
+
+.pelaaja_ruutu{
+  width: 190px;
+  text-align: left;
+  margin-right: 0px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.pelaaja_ruutu_isompi{
+
+}
+
+.pelinumero_box{
+  font-size: 20px;
+  font-family: 'Black Ops One', Arial, Helvetica, sans-serif;
+  padding:5px;
+  /*padding-right: 10px; */
+  background-color: #1C1C1C;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color:white;
+  text-align: center;
+}
+
+.pelinro_asemointi{
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  z-index: 5;
+  margin-right: 5px;
+}
+
+.pelaajannimi{
+  width: 183px;
+  height: 35px;
+  background-color: #1C1C1C;
+  display: block;
+  text-align: left;
+  padding-top: 7px;
+  padding-left: 10px;
+  margin-top: -35px;
+  color: white;
+  
+}
+
+
+
 
 .kaksipalstaa{
   width: 183px;
@@ -306,35 +436,11 @@ code {
   flex-wrap: wrap;
 }
 
-.pelaaja_ruutu{
-  width: 190px;
-  text-align: left;
-  margin-right: 0px;
-  margin-top: 10px;
-  position: relative;
-}
 
-.pelinumero_box{
-  font-size: 26px;
-  margin-right: 5px;
-  font-family: 'Black Ops One', Arial, Helvetica, sans-serif;
-  padding:5px;
-  padding-right: 10px;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
 
-.pelaajannimi{
-  width: 183px;
-  height: 35px;
-  background-color: black;
-  display: block;
-  text-align: left;
-  padding-top: 7px;
-  padding-left: 10px;
-  margin-top: -35px;
-  color: white;
+.pelaajannimi_box a:link, .pelaajannimi_box a:hover, {
+  text-decoration: none;
+  color: green;
 }
 
 .pelinumero{
