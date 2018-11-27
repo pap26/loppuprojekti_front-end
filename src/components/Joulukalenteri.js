@@ -49,7 +49,7 @@ class Joulukalenteri extends Component {
 
   render() {
     return (
-      <div className="tapahtuma_bg">
+      <div>
         <div className="calendar">
           {this.state.days.map(d => (
             <Luukku key={d} day={d} />

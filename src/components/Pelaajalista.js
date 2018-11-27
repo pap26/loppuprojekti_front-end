@@ -44,15 +44,16 @@ class Pelaajalista extends Component {
                 <div key={pelaaja.id} >
                     <div className="pelaaja_ruutu">
                    
-                    <div className="pelaaja_img"><img src={pelaaja.kuvapolku} alt="pelaajan kuva"  /></div>
-                     <div className="pelinumero_box">{pelaaja.numero}</div>
                         <Link to={url} type="hidden">
-                            <div className="pelaajannimi"  name={pelaaja.id}>
-                                <span className="pelinumero">{pelaaja.numero}</span>
-                                <span>{pelaajanimi}</span>
-                            </div>
+                            <div className="pelaaja_img"><img src={pelaaja.kuvapolku} alt="pelaajan kuva"  /></div>
                         </Link>
-                    
+
+                        <div className="pelinumero_box pelinro_asemointi">{pelaaja.numero}</div>
+                        <div className="pelaajannimi_box">
+                            <div className="pelaajannimi"  name={pelaaja.id}>
+                                <span className="linkki">{pelaajanimi}</span>
+                            </div>
+                        </div>
                      <div className="pelaaja_napit">
                         <button className="btn btn-light" href="/pelaajat/:id">Muokkaa</button>
                         <button className="btn btn-light" onClick={() => this.remove(pelaaja.id)}>Poista</button> 
@@ -66,13 +67,15 @@ class Pelaajalista extends Component {
             <div>
                 <h3>Pelaajat</h3>
 
-                <button className="btn btn-light" href="">Lisää pelaaja</button>
+                {/* <button className="btn btn-light" href="">Lisää pelaaja</button> */}
 
-                <div className="flexpalstat">{pelaajalista}
-                <div className="pelaajalomake">
-                    <h3>Lisää pelaaja</h3>
+                <div className="flexpalstat">{pelaajalista} </div>
+
+                <div className="lohko">
+                    <h4>Lisää pelaaja</h4>
+                    <div className="pelaajalomake">
                     <UusiPelaaja/>
-                </div>
+                    </div>
                 </div>
 
             </div>

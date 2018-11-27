@@ -22,19 +22,31 @@ class Pelaajakortti extends Component {
     render() {
         return ( this.state.pelaaja ? (
         <div>
-                <h3>{this.state.pelaaja.etunimi} {this.state.pelaaja.sukunimi} </h3>
-                <h3>{this.state.pelaaja.numero}</h3>
-                <div className="pelaaja_ruutu">
-                <div className="pelaaja_img"><img src={this.state.pelaaja.kuvapolku} alt="pelaajan kuva"  /></div>
+                <h3 className="center">{this.state.pelaaja.etunimi} {this.state.pelaaja.sukunimi} </h3>
+                <div className="pelinumero_box center">{this.state.pelaaja.numero}</div>
+                
+                <div className="pelaaja_ruutu_isompi">
+                <div className="pelaaja_img_isompi"><img src={this.state.pelaaja.kuvapolku} alt="pelaajan kuva"  /></div>
+
+                <div className="lohko">
                 
                 <div className="syntymaaika">
-                    <p><strong>Pelipaikka:</strong> {this.state.pelaaja.pelipaikka}</p>
-                <p><strong>Syntymäpäivä:</strong> {this.state.pelaaja.syntymaaika}</p>
-                    <p><strong>Sähköposti: </strong> {this.state.pelaaja.email}</p>
-                    <p><strong>Puhelinnumero: </strong> {this.state.pelaaja.puhnro}</p>
-                <p><strong>Lempiruoka: </strong> {this.state.pelaaja.lempiruoka}</p>
-                    <p><strong>Lisätietoa: </strong> {this.state.pelaaja.info}</p>
 
+                    <p><span className="tiedot">Pelipaikka:</span> {this.state.pelaaja.pelipaikka}</p>
+
+                    {/* <span className="tiedot"> 
+                        {new Intl.DateTimeFormat('fi-FI', { 
+                        hour: 'numeric',
+                        minute: 'numeric',
+                        }).format(tapahtuma.start.dateTime.value)}</span> */}
+
+                <p><span className="tiedot">Syntymäpäivä:</span> {this.state.pelaaja.syntymaaika}</p>
+                    <p><span className="tiedot">Sähköposti:</span> {this.state.pelaaja.email}</p>
+                    <p><span className="tiedot">Puhelinnumero:</span>{this.state.pelaaja.puhnro}</p>
+                <p><span className="tiedot">Lempiruoka:</span> {this.state.pelaaja.lempiruoka}</p>
+                    <p><span className="tiedot">Lisätietoa:</span>{this.state.pelaaja.info}</p>
+
+                </div>
                 </div>
             </div>
         </div>

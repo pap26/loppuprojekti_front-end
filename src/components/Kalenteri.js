@@ -8,7 +8,11 @@ class Kalenteri extends Component {
         return (
             <div>
                 <Navigation />
-                <Joulukalenteri />
+
+                <div className="tapahtuma_bg">
+                    <h3 className="center">Joulukalenteri</h3>
+                    <Joulukalenteri />
+                </div>
             </div>
         );
     }
