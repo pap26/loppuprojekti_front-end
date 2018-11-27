@@ -6,6 +6,7 @@ import PelaajatSivu from './components/PelaajatSivu.js';
 import ToimihenkilotSivu from './components/ToimihenkilotSivu.js';
 import Kalenteri from './components/Kalenteri.js';
 import './App.css';
+import UusiPelaaja from "./components/UusiPelaaja";
 import PelaajakorttiSivu from "./components/PelaajakorttiSivu";
 import Pelaajalista from "./components/Pelaajalista";
 
@@ -18,8 +19,9 @@ const App = appProps => (
                 <Route path="/login" component={KirjauduSivu} />
                 <Route path="/kalenteri" component={Kalenteri} />
                 <Route path="/pelaajat" component={PelaajatSivu}/>
+
                 <Route path="/toimihenkilot" component={ToimihenkilotSivu}/>
-                <Route path="/pelaaja" component={PelaajakorttiSivu}/>
+                <Route path="/pelaajakortti/:id" component={PelaajakorttiSivu}/>
                 <Route path="/pelaajalista" component={Pelaajalista}/>
             </Switch>
         </div>

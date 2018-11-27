@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
+import UusiPelaaja from "./UusiPelaaja";
 
 class Pelaajalista extends Component {
     constructor(props) {
@@ -36,19 +38,21 @@ class Pelaajalista extends Component {
         }
 
         const pelaajalista = pelaajat.map(pelaaja => {
-            const pelaajanimi = `${pelaaja.etunimi || ''} ${pelaaja.sukunimi || ''}`;
+            const pelaajanimi = `${pelaaja.etunimi} ${pelaaja.sukunimi}`;
+            var url = '/pelaajakortti/' + pelaaja.id;
             return (
-                <div>
+                <div key={pelaaja.id} >
                     <div className="pelaaja_ruutu">
-                    {/* <div>key={pelaaja.id}</div> */}
-                    <div className="pelaaja_img"></div>
-                    <div className="pelinumero_box">{pelaaja.numero}</div>
-                    <div className="pelaajannimi">
-                        {/* <span className="pelinumero">{pelaaja.numero}</span> */}
-                        <span>{pelaajanimi}</span>
-                        
-                    </div>
-                
+                   
+                    <div className="pelaaja_img"><img src={pelaaja.kuvapolku} alt="pelaajan kuva"  /></div>
+                     <div className="pelinumero_box">{pelaaja.numero}</div>
+                        <Link to={url} type="hidden">
+                            <div className="pelaajannimi"  name={pelaaja.id}>
+                                <span className="pelinumero">{pelaaja.numero}</span>
+                                <span>{pelaajanimi}</span>
+                            </div>
+                        </Link>
+                    
                      <div className="pelaaja_napit">
                         <button className="btn btn-light" href="/pelaajat/:id">Muokkaa</button>
                         <button className="btn btn-light" onClick={() => this.remove(pelaaja.id)}>Poista</button> 
@@ -61,8 +65,16 @@ class Pelaajalista extends Component {
         return (
             <div>
                 <h3>Pelaajat</h3>
+
                 <button className="btn btn-light" href="">Lisää pelaaja</button>
-                <div className="flexpalstat" >{pelaajalista}</div>
+
+                <div className="flexpalstat">{pelaajalista}
+                <div className="pelaajalomake">
+                    <h3>Lisää pelaaja</h3>
+                    <UusiPelaaja/>
+                </div>
+                </div>
+
             </div>
         );
     }
