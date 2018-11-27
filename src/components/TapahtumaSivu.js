@@ -27,11 +27,7 @@ class TapahtumaSivu extends Component {
             // jos haet esim jsonista kysysmys-tietoa, käytä json.kysymys
             this.setState({tapahtumat: data, ladattu: true})
             });
-
     }; 
-
-
-
 
 
     render() {
@@ -40,7 +36,6 @@ class TapahtumaSivu extends Component {
         const naytaTapahtuma = this.state.ladattu ? 'tapahtuma_bg' : 'tapahtuma_bg hidden';
         const naytaInsta = this.state.ladattu ? '' : 'hidden';
     
-
         return (
             <div>
                 <div className="tausta">
