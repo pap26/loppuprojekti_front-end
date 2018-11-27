@@ -81,7 +81,7 @@ class Kirjaudu extends Component {
   // }
 
   render() {
-    const { email, password, error, resetPassword } = this.state;
+    //const { email, password, error, resetPassword } = this.state;
     return (
       <div>
         <img src={logo} className="App-logo" alt="logo" />

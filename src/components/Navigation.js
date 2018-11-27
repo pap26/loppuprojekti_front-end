@@ -31,7 +31,7 @@ class Navigation extends Component {
                     <NavItem eventKey={4} href="/toimihenkilot">Toimihenkilöt</NavItem>
                     </Nav>
                     <Nav pullRight>
-                    <NavItem eventKey={6} button onClick={this.logout} href="/">Kirjaudu ulos</NavItem>
+                    <NavItem eventKey={6}  onClick={this.logout} href="/">Kirjaudu ulos</NavItem>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
