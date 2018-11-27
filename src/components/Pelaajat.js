@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import UusiPelaaja from "./UusiPelaaja";
 
 class Pelaajat extends Component {
-
     state = {
         ladataan: true,
         pelaajajoukko: []
@@ -37,7 +36,7 @@ class Pelaajat extends Component {
                         )}
                 </div>
                 <hr/>
-                <p>Tähän tulee button link pelaajalistaan?</p>
+                <p>Tämä on placeholder-sivu</p>
                 <UusiPelaaja/>
 
             </div>

@@ -5,7 +5,6 @@ import ig from '../img/ig.png';
 import Iframe from "react-iframe";
 import '../insta.css';
 
-class Instagram extends Component {
 
     render() {
         return (

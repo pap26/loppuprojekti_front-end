@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import TapahtumaSivu from "./TapahtumaSivu.js";
-import Kirjaudu from "./Kirjaudu.js";
+import KirjauduSivu from "./KirjauduSivu.js";
 import { auth } from "../firebase/auth";
 
 
@@ -32,7 +32,7 @@ class Etusivu extends Component {
   render() {
     console.log("cu", auth.currentUser);
     return (
-        <div>{auth.currentUser ? <TapahtumaSivu /> : <Kirjaudu />}</div>        
+        <div>{auth.currentUser ? <TapahtumaSivu /> : <KirjauduSivu />}</div>        
     );
   }
 }
