@@ -26,17 +26,12 @@ class TapahtumaSivu extends Component {
             // jos haet esim jsonista kysysmys-tietoa, käytä json.kysymys
             this.setState({tapahtumat: data})
             });
-
     }; 
-
-
-
 
 
     render() {
         console.log(this.state.tapahtumat)
     
-
         return (
             <div>
                 <div className="tausta">
