@@ -1,10 +1,11 @@
-// TÄÄ EI VIELÄ SKULAA, tuo vain yhden postauksen
+// TÄÄ EI VIELÄ SKULAA, hakee vain yhden
 
 import React, { Component } from "react";
 import ig from '../img/ig.png';
 import Iframe from "react-iframe";
 import '../insta.css';
 
+class Instagram extends Component {
 
     render() {
         return (
