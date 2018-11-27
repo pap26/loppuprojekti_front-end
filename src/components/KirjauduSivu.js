@@ -1,15 +1,15 @@
-// import React, { Component } from 'react';
-// import Kirjaudu from './Kirjaudu.js';
+import React, { Component } from 'react';
+import Kirjaudu from './Kirjaudu.js';
 
-// class KirjauduSivu extends Component {
+class KirjauduSivu extends Component {
 
-//     render() {
-//         return (
+    render() {
+        return (
 
-//             <Kirjaudu {...this.props}/>
+            <Kirjaudu {...this.props}/>
             
-//         );
-//     }
-// }
+        );
+    }
+}
 
-// export default KirjauduSivu;
+export default KirjauduSivu;
