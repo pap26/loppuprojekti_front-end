@@ -18,10 +18,8 @@ const App = appProps => (
                 <Route path="/login" component={KirjauduSivu} />
                 <Route path="/kalenteri" component={Kalenteri} />
                 <Route path="/pelaajat" component={PelaajatSivu}/>
-
                 <Route path="/toimihenkilot" component={ToimihenkilotSivu}/>
                 <Route path="/pelaajakortti/:id" component={PelaajakorttiSivu}/>
-                <Route path="/pelaajalista" component={Pelaajalista}/>
             </Switch>
         </div>
     </Router>

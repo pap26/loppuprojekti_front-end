@@ -1,53 +1,55 @@
 import React, { Component } from 'react';
-
-const toimihenkilot = [
-    {
-        etunimi: 'Sam',
-        sukunimi: 'Sam',
-        rooli: 'joukkueenjohtaja',
-        email: 'somewhere@gmail.com',
-        puh: '040 4567890'
-
-    },
-
-    {
-        etunimi: 'Piia',
-        sukunimi: 'Piispa',
-        rooli: 'valmentaja',
-        email: 'somewhere@gmail.com',
-        puh: '040 4567890'
-
-    }];
-
+import {Link} from "react-router-dom";
+import UusiPelaaja from "./UusiPelaaja";
 
 class Toimihenkilot extends Component {
 
-    render() {
+    constructor(props) {
+        super(props);
+        this.state = {toimihenkilot: [], ladataan: true};
+    }
 
-        const toimihenkilolista = toimihenkilot.map(henkilo => {
-    
-            return (
-                <div className="pelaaja_ruutu">
-                <div className="pelaaja_img"></div>
-                    <div className="pelaajannimi">
-                    <span>{henkilo.etunimi}{henkilo.sukunimi}</span></div>
-                    <div className="toimihenkilot">
-                        <span className="nimi">{toimihenkilot.rooli} </span>
-                        <span className="nimi">{toimihenkilot.email} </span>
-                        <span className="nimi">{toimihenkilot.puh} </span>
-                    </div>
-                    </div>
-                    )
-    
-        });
+    componentDidMount() {
+        this.setState({ladataan: true});
+
+        fetch('api/toimihlot')
+            .then(response => response.json())
+            .then(data => this.setState({toimihenkilot: data, ladataan: false}));
+    }
+
+    render() {
+        const {toimihenkilot, ladataan} = this.state;
+
+        if (ladataan) {
+            return <p>Ladataan...</p>;
+        }
+
+        const toimihenkilolista = toimihenkilot.map(toimihlo => {
+
+        return (
+                <div>
+                    <div className="pelaaja_ruutu">
+                        <div className="pelaaja_img"><img src={toimihlo.kuva} alt="toimihenkilon kuva"  />
+                        </div>
+                        <div className="pelaajannimi">
+                            <span>{toimihlo.nimi}</span>
+                        </div>
+                        <div className="toimihenkilot">
+                            <span className="nimi">{toimihlo.rooli} </span>
+                            <span className="nimi">{toimihlo.email} </span>
+                        </div>
+
+
+                        </div>
+                </div>
+        )});
 
         return (
             <div>
             <h3>Toimihenkilöt</h3>
-                <button href="">Lisää pelaaja</button>
                 <div className="flexpalstat" >{toimihenkilolista}</div>
             </div>
             );
-        }   
-}
+        }
+                    }
 export default Toimihenkilot;

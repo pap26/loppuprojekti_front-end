@@ -13,6 +13,7 @@ class UusiPelaaja extends Component {
         email:'',
         puhnro: '',
         info: '',
+        kuvapolku:'',
 
     }
 
@@ -48,6 +49,10 @@ class UusiPelaaja extends Component {
         this.setState({pelipaikka: e.target.value})
     }
 
+    handleKuvapolkuChange = (e) => {
+        this.setState({kuvapolku: e.target.value})
+    }
+
     handleSubmit = event => {
         event.preventDefault();
 
@@ -60,6 +65,7 @@ class UusiPelaaja extends Component {
             puhnro: this.state.puhnro,
             syntymaaika: this.state.syntymaaika,
             info: this.state.info,
+            kuvapolku: this.state.kuvapolku,
         };
 
         axios.post(`http://localhost:8080/api/pelaaja/`, uusipelaaja)
@@ -127,7 +133,13 @@ class UusiPelaaja extends Component {
                         id="puhnro"
                         type="text"
                         onChange={this.handlePuhnroChange}/>
-
+                    <br/>
+                    <label htmlFor="kuvapolku">Kuvan osoite:</label>
+                    <input
+                        name="kuvapolku"
+                        id="kuvapolku"
+                        type="text"
+                        onChange={this.handleKuvapolkuChange}/>
 
                     <br/>
                     <label htmlFor="info">Esittely:</label>
@@ -135,8 +147,9 @@ class UusiPelaaja extends Component {
                         name="info"
                         id="info"
                         onChange={this.handleInfoChange}/>
+                    <br/>
 
-                    <button type='submit'>Tallenna</button>
+                    <button type='submit'>Lisää pelaaja</button>
                 </form>
             </div>
         )
