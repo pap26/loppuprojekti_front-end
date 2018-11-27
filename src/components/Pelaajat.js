@@ -23,7 +23,6 @@ class Pelaajat extends Component {
           return <p>Ladataan...</p>;
       }
 
-
         return (
             <div>
 

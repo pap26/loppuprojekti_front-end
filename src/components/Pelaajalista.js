@@ -9,12 +9,21 @@ class Pelaajalista extends Component {
         this.remove = this.remove.bind(this);
     }
 
-    componentDidMount() {
-        this.setState({ladataan: true});
+    paivita = () => {
+        console.log("jee");
+        this.haePelaaja();
+        this.setState(this.state);
+    }
 
+    haePelaaja = () => {
         fetch('api/pelaajat')
             .then(response => response.json())
             .then(data => this.setState({pelaajat: data, ladataan: false}));
+    }
+    componentDidMount() {
+        this.setState({ladataan: true});
+
+       this.haePelaaja();
     }
 
     async remove(id) {
@@ -71,7 +80,7 @@ class Pelaajalista extends Component {
                 <div className="flexpalstat">{pelaajalista}
                     <div className="pelaajalomake">
                         <h3>Lisää pelaaja</h3>
-                        <UusiPelaaja/>
+                        <UusiPelaaja paivita={this.paivita}/>
                     </div>
                 </div>
 

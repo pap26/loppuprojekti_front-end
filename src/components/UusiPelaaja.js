@@ -73,6 +73,7 @@ class UusiPelaaja extends Component {
                 console.log(res);
                 console.log(res.data);
             })
+        this.props.paivita();
     }
 
     render() {
