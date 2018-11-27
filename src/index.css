@@ -239,6 +239,13 @@ code {
 .weather{
   width: auto;
   height: 100%;
+  
+}
+
+.lampotila{
+  width: auto;
+  text-align: center;
+  font-weight: 600;
 }
 
 .flex{

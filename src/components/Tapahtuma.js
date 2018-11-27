@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import weather from '../img/weather.png';
 import Googlekartta from './Googlekartta.js';
+import Saatila from './Saatila';
 
+//Tämä luokka palauttaa listauksen tapahtumista. Tapahtuma-luokka saa propsinsa TapahtumaSivu-komponentilta
 
 class Tapahtuma extends Component {
     constructor(props) {
         super(props);
         this.state = {
             // displayKartta: false
+            //Tämä alla oleva lista oli kettumainen. Staten täytyy olla false yhtä monta kertaa, kuin listassa on tapahtumia.
             lista: [
                 false,
                 false,
@@ -34,16 +37,10 @@ class Tapahtuma extends Component {
 
 
     render() {
-        // const otsikko = tapahtuma.summary.split(':');
-        // console.log(otsikko[0])
-        // console.log(otsikko[1])
-
-
-        console.log("Tapahtuma.render props", this.props);
+       console.log("Tapahtuma.render props", this.props);
         var tapahtumalista = this.props.lista.map((tapahtuma, i) =>{
             
            return (
-
             <div className="tapahtuma_main fadeIn">
 
                 <div className="tapahtuma_otsikko"> 
@@ -75,14 +72,15 @@ class Tapahtuma extends Component {
                             <button className="in_button btn btn-light">out</button>
                         </div>
                     </div>
+                       {/* Alla divit, joista löytyvät: karttanappi, säätilan kuva sekä avautuva karttanäkymä. Säätila haetaan Saatila-luokasta, 
+                        Kartta puolestaan haetaan Googlekartta-luokasta. -pz */}
                     <div>
                         <div className="tapahtuma_paikka">{tapahtuma.location}</div>
                         <div className="flex">
                             <div className="kartta">
-
-                            <button className="kartta_btn btn" onClick={this.displayKartta.bind(this, i)}>Kartta</button>
+                                <button className="kartta_btn btn" onClick={this.displayKartta.bind(this, i)}>Kartta</button>
                             </div>
-                            <div className="saainfo"><img src={weather} className="weather" alt="weather" /></div> 
+                            <div className="saainfo"><Saatila saalokaatio = {tapahtuma.location}></Saatila></div>                            
                         </div>
                     </div>
                </div>
