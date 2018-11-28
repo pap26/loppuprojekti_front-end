@@ -8,7 +8,7 @@ class Pelaajakortti extends Component {
         }
 
     componentDidMount() {
-        const promise = this.haePelaaja();
+        this.haePelaaja();
     
     }
 
