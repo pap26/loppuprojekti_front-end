@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MuokkaaPelaajaa from "./MuokkaaPelaajaa";
+import UusiPelaaja from "./UusiPelaaja";
 
 class Pelaajakortti extends Component {
     state = {
@@ -62,7 +63,14 @@ class Pelaajakortti extends Component {
                 </div>
                 </div>
             </div>
-            <MuokkaaPelaajaa lomake = {this.props.match.params.id}/>
+
+            <div className="lohko">
+                <h4>Muokkaa pelaajan tietoja</h4>
+                <div className="pelaajalomake">
+                    <MuokkaaPelaajaa {...this.state}/>
+                </div>
+            </div>
+
         </div>
             ) : (
                 <div>Ladataan...</div>

@@ -5,15 +5,16 @@ import axios from "axios";
 class MuokkaaPelaajaa extends Component {
 
     state = {
-        etunimi: '',
-        sukunimi: '',
-        numero: '',
-        pelipaikka: '',
-        syntymaaika:'',
-        email:'',
-        puhnro: '',
-        info: '',
-        kuvapolku:'',
+            etunimi: '',
+            sukunimi: '',
+            numero: '',
+            pelipaikka: '',
+            syntymaaika: '',
+            email: '',
+            puhnro: '',
+            lempiruoka: '',
+            info: '',
+            kuvapolku: '',
 
     }
 
@@ -52,6 +53,9 @@ class MuokkaaPelaajaa extends Component {
     handleKuvapolkuChange = (e) => {
         this.setState({kuvapolku: e.target.value})
     }
+    handleLempiruokaChange = (e) => {
+        this.setState({lempiruoka: e.target.value})
+    }
 
     handleSubmit = event => {
         event.preventDefault();
@@ -64,11 +68,13 @@ class MuokkaaPelaajaa extends Component {
             email: this.state.email,
             puhnro: this.state.puhnro,
             syntymaaika: this.state.syntymaaika,
+            lempiruoka: this.state.lempiruoka,
             info: this.state.info,
             kuvapolku: this.state.kuvapolku,
         };
 
-        axios.put(`http://localhost:8080/api/pelaaja/lisaa/${this.state.id}`, paivitys)
+        let id = this.props.pelaaja.id;
+        axios.put(`http://localhost:8080/api/pelaaja/lisaa/${id}`, paivitys)
             .then(res => {
                 console.log(res);
                 console.log(res.data);
@@ -87,6 +93,7 @@ class MuokkaaPelaajaa extends Component {
                                 name="etunimi"
                                 id="etunimi"
                                 type="text"
+                                placeholder={this.props.pelaaja.etunimi}
                                 onChange={this.handleEtunimiChange}/>
                             </td>
                         </tr>
@@ -96,6 +103,7 @@ class MuokkaaPelaajaa extends Component {
                                 name="sukunimi"
                                 id="sukunimi"
                                 type="text"
+                                placeholder={this.props.pelaaja.sukunimi}
                                 onChange={this.handleSukunimiChange}/>
                             </td>
                         </tr>
@@ -105,6 +113,7 @@ class MuokkaaPelaajaa extends Component {
                                 name="numero"
                                 id="numero"
                                 type="text"
+                                placeholder={this.props.pelaaja.numero}
                                 onChange={this.handleNumeroChange}/>
                             </td>
                         </tr>
@@ -137,7 +146,18 @@ class MuokkaaPelaajaa extends Component {
                                 name="email"
                                 id="email"
                                 type="email"
+                                placeholder={this.props.pelaaja.email}
                                 onChange={this.handleEmailChange}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label htmlFor="lempiruoka">Lempiruoka:</label></td>
+                            <td>  <input
+                                name="lempiruoka"
+                                id="lempiruoka"
+                                type="text"
+                                placeholder={this.props.pelaaja.lempiruoka}
+                                onChange={this.handleLempiruokaChange}/>
                             </td>
                         </tr>
                         <tr>
@@ -146,6 +166,7 @@ class MuokkaaPelaajaa extends Component {
                                 name="puhnro"
                                 id="puhnro"
                                 type="text"
+                                placeholder={this.props.pelaaja.puhnro}
                                 onChange={this.handlePuhnroChange}/>
                             </td>
                         </tr>
@@ -155,6 +176,7 @@ class MuokkaaPelaajaa extends Component {
                                 name="kuvapolku"
                                 id="kuvapolku"
                                 type="text"
+                                placeholder={this.props.pelaaja.kuvapolku}
                                 onChange={this.handleKuvapolkuChange}/>
                             </td>
                         </tr>
@@ -163,6 +185,7 @@ class MuokkaaPelaajaa extends Component {
                             <td> <textarea
                                 name="info"
                                 id="info"
+                                placeholder={this.props.pelaaja.info}
                                 onChange={this.handleInfoChange}/>
                             </td>
                         </tr>

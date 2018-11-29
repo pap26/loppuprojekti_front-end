@@ -56,6 +56,7 @@ class UusiPelaaja extends Component {
     handleSubmit = event => {
         event.preventDefault();
 
+
         const uusipelaaja = {
             etunimi: this.state.etunimi,
             sukunimi: this.state.sukunimi,
