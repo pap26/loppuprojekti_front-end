@@ -9,6 +9,8 @@ class Pelaajalista extends Component {
         this.remove = this.remove.bind(this);
     }
 
+    // admin: <Kirjaudu admin={this.props.admin} KAIPAA PARANTELUA
+
     componentDidMount() {
         this.setState({ladataan: true});
 
@@ -16,6 +18,7 @@ class Pelaajalista extends Component {
             .then(response => response.json())
             .then(data => this.setState({pelaajat: data, ladataan: false}));
     }
+
 
     async remove(id) {
         await fetch(`/api/pelaaja/${id}`, {
