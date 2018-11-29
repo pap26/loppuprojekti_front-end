@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MuokkaaPelaajaa from "./MuokkaaPelaajaa";
 
 class Pelaajakortti extends Component {
     state = {pelaaja: null}
@@ -20,6 +21,7 @@ class Pelaajakortti extends Component {
     }
 
     render() {
+
         return ( this.state.pelaaja ? (
         <div>
                 <h3 className="center">{this.state.pelaaja.etunimi} {this.state.pelaaja.sukunimi} </h3>
@@ -34,12 +36,6 @@ class Pelaajakortti extends Component {
 
                     <p><span className="tiedot">Pelipaikka:</span> {this.state.pelaaja.pelipaikka}</p>
 
-                    {/* <span className="tiedot"> 
-                        {new Intl.DateTimeFormat('fi-FI', { 
-                        hour: 'numeric',
-                        minute: 'numeric',
-                        }).format(tapahtuma.start.dateTime.value)}</span> */}
-
                 <p><span className="tiedot">Syntymäpäivä:</span> {this.state.pelaaja.syntymaaika}</p>
                     <p><span className="tiedot">Sähköposti:</span> {this.state.pelaaja.email}</p>
                     <p><span className="tiedot">Puhelinnumero:</span>{this.state.pelaaja.puhnro}</p>
@@ -49,12 +45,11 @@ class Pelaajakortti extends Component {
                 </div>
                 </div>
             </div>
+            <MuokkaaPelaajaa lomake = {this.props.match.params.id}/>
         </div>
             ) : (
-                <div>Ladataan... ehkä ikuisesti?</div>
+                <div>Ladataan...</div>
             )
-
-
 
         );
     }
