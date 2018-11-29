@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MuokkaaPelaajaa from "./MuokkaaPelaajaa";
 
 class Pelaajakortti extends Component {
     state = {
@@ -27,6 +28,7 @@ class Pelaajakortti extends Component {
     }
 
     render() {
+
         //Syntymäaika tulee tietokannasta valmiiksi formatoidussa muodossa. 
         //Muutin päiväyksen tästä syystä ensin millisekunneiksi ja sitten taas päivämääräksi.
         //Jotta pääsin muokkaamaan päiväystä, täytyi sille tehdä oma muuttuja stateen. -pz
@@ -60,8 +62,13 @@ class Pelaajakortti extends Component {
                 </div>
                 </div>
             </div>
+            <MuokkaaPelaajaa lomake = {this.props.match.params.id}/>
         </div>
-            ) : ( <div>Ladataan... ehkä ikuisesti?</div> )
+            ) : (
+                <div>Ladataan...</div>
+            )
+
+
         );
     }
 }
