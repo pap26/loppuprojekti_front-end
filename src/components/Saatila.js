@@ -39,10 +39,10 @@ class Saatila extends Component {
             
     };
     render() {
-        console.log('säätila, tuleeko this.state renderiin?', this.state)
+        //console.log('säätila, tuleeko this.state renderiin?', this.state)
         var saatila = this.state.saatila
         var isLoaded = this.state.isLoaded
-        console.log('tuleeko säätila läpi?', saatila)
+        //console.log('tuleeko säätila läpi?', saatila)
       
     
         if (!isLoaded) {

@@ -9,7 +9,6 @@ class Googlekartta extends Component {
             lat: 60.316235, 
             lng: 25.065618,  
         }
-     
     }
 
     componentDidMount = () => {
