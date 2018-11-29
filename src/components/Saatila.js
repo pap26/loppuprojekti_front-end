@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {haeLokaatio} from './../ServiceClient'
+import weather from '../img/weather.png';
 
 class Saatila extends Component {
     constructor(props) {
@@ -9,6 +10,7 @@ class Saatila extends Component {
             isLoaded: false,
             lat: 60.31, 
             lng: 25.06, 
+            mockikuva: false
         }
     }
     componentDidMount= () =>  {
@@ -17,8 +19,8 @@ class Saatila extends Component {
         //jotka asetetaan stateen. -pz
         haeLokaatio(this.props.saalokaatio, (lat, lng) => {
             this.setState({lat:lat, lng:lng});
-            console.log("Haettu state", this.state);
-            console.log("Haettu lat ja lng", {lat:lat, lng:lng});
+            // console.log("Haettu state", this.state);
+            // console.log("Haettu lat ja lng", {lat:lat, lng:lng});
       
         //Alla OpenWeather-apin osoitteeseen tuodaan yllä haetut lat ja lng. Osoitteella haetaan säätila ja asetetaan se saatila-tauluun muuttujaksi
         let alkuUrl= 'http://api.openweathermap.org/data/2.5/weather?'
@@ -27,32 +29,53 @@ class Saatila extends Component {
         console.log("lati ennen urlin asetusta", laturl)
         let lngurl = '&lon='+ lng
         console.log("longi ennen urlin asetusta", lngurl)
+
         fetch(alkuUrl + laturl + lngurl + loppuurl)
-            .then (res => res.json()) 
+            .then ((response) => {
+                if (!response.ok) {
+                    this.setState({
+                        mockikuva: true,
+                    })    
+                    // throw Error(response.statusText);          
+                }
+                
+                return response;
+            })
+            .then (response => response.json()) 
             .then (data=>{
                 this.setState({
                     isLoaded: true,
                     saatila: data,
                 })
             });
-        });
-            
+        });    
+          
     };
     render() {
         //console.log('säätila, tuleeko this.state renderiin?', this.state)
-        var saatila = this.state.saatila
+        // var saatila = this.state.saatila
         var isLoaded = this.state.isLoaded
+        var mockikuva = this.state.mockikuva
         //console.log('tuleeko säätila läpi?', saatila)
       
     
         if (!isLoaded) {
-            return <div>Pieni hetki, haemme tietoja...</div>;
+            return <div className="saanlataus">Pieni hetki, haemme tietoja...</div>;
+        }
+        if (mockikuva) {
+            return  (
+                <div className="flex">
+                    <img className="weather" src= {weather} alt="Säätilan kuva"/>
+                    <div className="lampotila">{"+25"} 
+                    </div>            
+                </div>
+             )
         }
         else {
         // console.log('render4', this.state.saatila.weather[0].icon)
         var iconcode = this.state.saatila.weather[0].icon;
         console.log('ikonimuuttujalla', iconcode)
-        console.log('ikoni', this.state.saatila.weather[0].icon)
+        // console.log('ikoni', this.state.saatila.weather[0].icon)
 
         //alla olevalla osoitteella haetaan weathericon-kuva -pz
         var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
