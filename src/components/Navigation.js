@@ -15,10 +15,10 @@ class Navigation extends Component {
     render() {
         return (
             <div className="valikko">
-            <Navbar staticTop >
+            <Navbar staticTop inverse >
                 <Navbar.Header>
                     <Navbar.Brand>
-                        KopseT04-05
+                        kotikenttä
                         {/* <Link to="/">KopseT04-05</Link> */}
                     </Navbar.Brand>
                     <Navbar.Toggle/>
@@ -31,7 +31,7 @@ class Navigation extends Component {
                     <NavItem eventKey={4} href="/kalenteri">Kalenteri</NavItem>
                     </Nav>
                     <Nav pullRight>
-                    <NavItem eventKey={5} button onClick={this.logout} href="/">Kirjaudu ulos</NavItem>
+                    <NavItem eventKey={5} onClick={this.logout} href="/">Kirjaudu ulos</NavItem>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

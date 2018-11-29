@@ -7,7 +7,7 @@ import ToimihenkilotSivu from './components/ToimihenkilotSivu.js';
 import Kalenteri from './components/Kalenteri.js';
 import './App.css';
 import PelaajakorttiSivu from "./components/PelaajakorttiSivu";
-import Pelaajalista from "./components/Pelaajalista";
+
 
 
 const App = appProps => (
