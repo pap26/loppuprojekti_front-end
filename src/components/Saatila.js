@@ -39,10 +39,10 @@ class Saatila extends Component {
             
     };
     render() {
-        console.log('säätila, tuleeko this.state renderiin?', this.state)
+        //console.log('säätila, tuleeko this.state renderiin?', this.state)
         var saatila = this.state.saatila
         var isLoaded = this.state.isLoaded
-        console.log('tuleeko säätila läpi?', saatila)
+        //console.log('tuleeko säätila läpi?', saatila)
       
     
         if (!isLoaded) {
@@ -51,8 +51,8 @@ class Saatila extends Component {
         else {
         // console.log('render4', this.state.saatila.weather[0].icon)
         var iconcode = this.state.saatila.weather[0].icon;
-        // console.log('ikonimuuttujalla', iconcode)
-        // console.log('ikoni', this.state.saatila.weather[0].icon)
+        console.log('ikonimuuttujalla', iconcode)
+        console.log('ikoni', this.state.saatila.weather[0].icon)
 
         //alla olevalla osoitteella haetaan weathericon-kuva -pz
         var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
