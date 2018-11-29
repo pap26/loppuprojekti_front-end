@@ -31,8 +31,7 @@ class TapahtumaSivu extends Component {
 
 
     render() {
-        // console.log(this.state.tapahtumat)
-
+       
         const naytaTapahtuma = this.state.ladattu ? 'tapahtuma_bg' : 'tapahtuma_bg hidden';
         const naytaInsta = this.state.ladattu ? '' : 'hidden';
     
