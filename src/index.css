@@ -235,6 +235,10 @@ code {
   height: 60px;
   margin-right: 30px;
 }
+.saanlataus {
+  margin-left: 50px;
+  font-size: 80%;
+}
 
 .weather{
   width: 90px;

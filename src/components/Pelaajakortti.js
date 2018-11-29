@@ -62,7 +62,7 @@ class Pelaajakortti extends Component {
             </div>
         </div>
             ) : ( <div>Ladataan... ehkä ikuisesti?</div> )
-        );
+            );
     }
 }
 
