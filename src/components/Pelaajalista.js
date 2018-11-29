@@ -63,10 +63,11 @@ class Pelaajalista extends Component {
                                 <span className="linkki">{pelaajanimi}</span>
                             </div>
                         </div>
-                        <div className="pelaaja_napit">
-                            {/*<button className="btn btn-light" href={muokkausurl}>Muokkaa</button>*/}
-                            <button className="btn btn-light" onClick={() => this.remove(pelaaja.id)}>Poista</button>
-                        </div>
+
+                     <div className="pelaaja_napit">
+                        <button className="flat_button silver-button" onClick={() => this.remove(pelaaja.id)}>Poista</button> 
+                    </div>
+
                     </div>
                 </div>)
 

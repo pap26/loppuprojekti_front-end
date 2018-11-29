@@ -97,15 +97,15 @@ class Kirjaudu extends Component {
             <button
               type="submit"
               onClick={this.login}
-              className="btn btn-success kirjaudu_btn"
+              className="flat_button kirjaudu_btn yellow-button"
             >
               Kirjaudu
             </button>
 
-            <button
+            <button 
               type="submit"
               onClick={this.resetPassword}
-              className="btn btn-success kirjaudu_btn"
+              className="flat_button kirjaudu_btn silver-button"
             >
               Vaihda salasana
             </button>

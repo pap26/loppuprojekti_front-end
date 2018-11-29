@@ -82,6 +82,7 @@ class UusiPelaaja extends Component {
 
                 <form className="upelaaja" onSubmit={this.handleSubmit}>
                 <table>
+                    <tbody>
                     <tr>
                         <td><label htmlFor="etunimi">Etunimi:</label></td>
                         <td><input
@@ -167,6 +168,7 @@ class UusiPelaaja extends Component {
                             onChange={this.handleInfoChange}/>
                         </td>
                     </tr>
+                    </tbody>
                 </table>
                     <button className="btn btn-light" type='submit'>Tallenna</button>
                 </form>
