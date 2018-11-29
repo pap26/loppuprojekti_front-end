@@ -11,7 +11,7 @@ class Kirjaudu extends Component {
       email: "",
       password: "",
       error: false,
-      passwordReset: false
+      passwordReset: false,
     };
   }
 
@@ -19,7 +19,7 @@ class Kirjaudu extends Component {
     this.setState({ [event.target.name]: event.target.value });
   }
 
-  // vanha käyttäjä kirjautuu
+  // käyttäjän autentikointi Firebasessa
   login(event) {
     event.preventDefault();
     console.log("login", auth);
@@ -38,7 +38,7 @@ class Kirjaudu extends Component {
 
   onLoginSuccess() {
     this.setState({
-      email: "",
+      email: this.state.email,
       password: "",
       error: "",
       resetPassword: ""
@@ -67,7 +67,6 @@ class Kirjaudu extends Component {
   render() {
     return (
       <div>
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <div>
           <form>
             <div className="form-group">

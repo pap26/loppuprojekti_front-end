@@ -24,12 +24,12 @@ class Luukku extends Component {
 
   async componentDidMount() {
     const { day } = this.props;
-    const keyword = keywords[(day - 1) % keywords.length];
+    const keyword = keywords[(day - 1) % keywords.length]; // avainsanojen läpikäynti
     const gifUrl = await fetchGiph(keyword);
     this.setState({ gifUrl });
   }
 
-  toggleSwitch = () => {
+  toggleSwitch = () => { // onClick avaa suljetun luukun tai sulkee avoinna olevan luukun
     this.setState(prevState => {
       return {
         opened: !prevState.opened
@@ -38,7 +38,7 @@ class Luukku extends Component {
   };
 
   renderDoor() {
-    const { opened, gifUrl } = this.state;
+    const { opened } = this.state;
 
     if (opened)
       return (

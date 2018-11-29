@@ -22,7 +22,7 @@ class Pelaajalista extends Component {
             .then(response => response.json())
             .then(data => this.setState({pelaajat: data}));
     }
-
+    
     componentDidMount() {
         this.setState();
         this.haePelaaja();
