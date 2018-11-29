@@ -17,8 +17,8 @@ class Googlekartta extends Component {
         //jotka asetetaan stateen. -pz
         haeLokaatio(this.props.lokaatio, (lat, lng) => {
             this.setState({lat:lat, lng:lng});
-            console.log("Haettu state", this.state);
-            console.log("Haettu lat ja lng", {lat:lat, lng:lng});
+            // console.log("Haettu state", this.state);
+            // console.log("Haettu lat ja lng", {lat:lat, lng:lng});
         });
     }
 

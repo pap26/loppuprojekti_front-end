@@ -51,8 +51,8 @@ class Saatila extends Component {
         else {
         // console.log('render4', this.state.saatila.weather[0].icon)
         var iconcode = this.state.saatila.weather[0].icon;
-        // console.log('ikonimuuttujalla', iconcode)
-        // console.log('ikoni', this.state.saatila.weather[0].icon)
+        console.log('ikonimuuttujalla', iconcode)
+        console.log('ikoni', this.state.saatila.weather[0].icon)
 
         //alla olevalla osoitteella haetaan weathericon-kuva -pz
         var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
